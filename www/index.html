@@ -5,19 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>筑习 - 建筑考研学习系统 3.0</title>
 <link rel="manifest" href="./manifest.webmanifest">
-<meta name="theme-color" content="#FFFFFF">
+<meta name="theme-color" content="#f6f6f3">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="筑习">
 <link rel="apple-touch-icon" href="./icon-180.png">
-<meta name="theme-color" content="#FFFFFF">
+<meta name="theme-color" content="#F2F2F7">
 <link rel="apple-touch-icon" href="./icon-180.png">
 <style>
-:root{--bg:#FFFFFF;--card:#FFF;--text:#1C1C1E;--sub:#5F6F82;--line:#C8D0DA;--accent:#23354D;--accent-soft:#8BA3C5;--accent-pale:#E8EDF4;--accent-deep:#02122F;--green:#5E8F78;--red:#7A2330;--r:12px}
+:root{--bg:#F2F2F7;--card:#FFF;--text:#1C1C1E;--sub:#5F6F82;--line:#C8D0DA;--accent:#23354D;--accent-soft:#8BA3C5;--accent-pale:#E8EDF4;--accent-deep:#02122F;--green:#5E8F78;--red:#7A2330;--r:12px}
 *{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif;-webkit-tap-highlight-color:transparent}
-html{background:#FFFFFF}body{background:var(--bg);color:var(--text);padding-bottom:90px;padding-top:env(safe-area-inset-top,0px);max-width:600px;margin:auto}
-header{background:rgba(255,255,255,.96);backdrop-filter:blur(20px);position:sticky;top:0;z-index:100;padding:16px 20px;border-bottom:.5px solid var(--line);padding-top:calc(16px + env(safe-area-inset-top,0px))}
+body{background:var(--bg);color:var(--text);padding-bottom:90px;padding-top:env(safe-area-inset-top,0px);max-width:600px;margin:auto}
+header{background:rgba(255,255,255,.88);backdrop-filter:blur(20px);position:sticky;top:0;z-index:100;padding:16px 20px;border-bottom:.5px solid var(--line);padding-top:calc(16px + env(safe-area-inset-top,0px))}
 header h1{font-size:18px;font-weight:600;display:flex;justify-content:space-between;align-items:center}
 .container{padding:16px}.card{background:var(--card);border-radius:var(--r);padding:16px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.05);border:.5px solid rgba(0,0,0,.04)}
 .card h2{font-size:15px;font-weight:600;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
@@ -30,7 +30,7 @@ input:focus,textarea:focus{border-color:var(--accent);background:#fff}
 .badge{font-size:10px;padding:2px 6px;border-radius:4px;background:var(--accent-pale);color:var(--accent-deep)}
 .tab-content{display:none}.tab-content.active{display:block}
 nav.tab-bar{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.94);backdrop-filter:blur(20px);display:flex;justify-content:space-around;padding:8px 2px 20px;border-top:.5px solid var(--line);z-index:1000;max-width:600px;margin:auto}
-.tab-item{text-align:center;font-size:9px;color:var(--sub);cursor:pointer;flex:1}.tab-item.active{color:var(--accent);font-weight:600}.tab-item span{display:block;font-size:16px;margin-bottom:2px}
+.tab-item{text-align:center;font-size:10px;color:var(--sub);cursor:pointer;flex:1}.tab-item.active{color:var(--accent);font-weight:600}.tab-item span{display:block;font-size:16px;margin-bottom:2px}
 .routine-week-head{display:flex;align-items:center;justify-content:space-between;gap:8px}.routine-week-title{font-size:11px;color:var(--sub);flex:1;text-align:center}.routine-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;margin-top:8px;touch-action:pan-y;overflow:visible}.routine-day{background:#FAFAFC;border-radius:8px;padding:7px 3px;text-align:center;font-size:11px;border:.5px solid var(--line);cursor:pointer;transition:transform .18s ease,box-shadow .18s ease,background .18s ease;min-width:0;position:relative;z-index:1}.routine-day.today{border-color:var(--accent);background:#F0F6FF}.routine-day.selected{transform:scale(1.13);z-index:5;padding:9px 4px;border-color:#111;background:#F1F1F3;box-shadow:0 3px 10px rgba(0,0,0,.10),inset 0 0 0 1px #111}.routine-day.selected.today{background:#E9F1FA}.routine-status{display:flex;justify-content:center;align-items:center;gap:3px;min-height:16px;margin-top:3px}.routine-extra{display:none;align-items:center;justify-content:center;gap:3px;margin-top:2px;font-size:10px}.routine-day.selected .routine-extra{display:flex}.routine-coffee{font-size:13px;line-height:1}.routine-distract{font-size:10px;line-height:1}
 .color-dots{display:flex;justify-content:center;gap:3px;flex-wrap:wrap;min-height:12px;margin-top:4px}.dot{width:7px;height:7px;border-radius:50%}
 .dot-建筑史{background:#AF52DE}.dot-建筑理论{background:#5856D6}.dot-建筑物理{background:#007AFF}.dot-构造技术{background:#34C759}.dot-英语{background:#FF9500}.dot-政治{background:#FF3B30}.dot-通用{background:#8E8E93}.dot-专业课{background:#AF52DE}.dot-其他{background:#8E8E93}
@@ -75,7 +75,7 @@ nav.tab-bar{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.
 .mood-option .mood-face{display:block;margin:0 auto 5px;width:58px;height:58px}
 .mood-note{font-size:12px;color:var(--sub);margin-top:10px}
 .month-mood{height:30px;display:flex;justify-content:center;align-items:center;margin-top:2px}
-.month-mood .mood-face{width:24px;height:24px;object-fit:contain;border-radius:50%;background:#fff}
+.month-mood .mood-face{width:24px;height:24px}
 .month-cell.has-mood{background:#fff6fa;border-color:#f1c2d5}
 .chart-panel{background:#fbf9fb;border:1px solid #eee7ee;border-radius:10px;padding:10px;margin-top:8px}
 .trend-svg{width:100%;height:150px;display:block}
@@ -113,21 +113,33 @@ button{touch-action:manipulation;-webkit-tap-highlight-color:transparent}button:
 
 .daily-time-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.daily-time-item{background:#F7F4F8;border-radius:10px;padding:11px}.daily-time-subject{font-size:11px;color:var(--sub);margin-bottom:4px}.daily-total{margin-top:10px;padding:11px;border-radius:10px;background:#EEE8F2;text-align:center}.time-chart-title{font-size:12px;font-weight:600;margin:12px 0 8px}.time-bars{display:flex;align-items:flex-end;justify-content:space-between;gap:7px;height:140px;padding:0 4px}.time-bar-col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:4px;font-size:9px}.time-bar{width:100%;max-width:30px;background:#111;border-radius:5px 5px 2px 2px;min-height:4px}.time-bar-col small{font-size:10px;color:var(--sub)}.weekly-time-meta{text-align:center;font-size:12px;margin-top:8px;padding:9px;background:#F7F4F8;border-radius:8px}
 
-.badge-focus-card{background:linear-gradient(135deg,#fff 0%,#fbfcff 58%,#faf9fc 100%);border:1px solid #edf0f4;box-shadow:0 2px 10px rgba(31,42,55,.04)}
-.badge-focus-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}.badge-focus-title{font-size:16px;font-weight:650}.badge-focus-sub{font-size:11px;color:var(--sub);margin-top:4px;line-height:1.55}.badge-progress{height:7px;background:#f0f2f5;border-radius:999px;overflow:hidden;margin:14px 0 9px}.badge-progress>i{display:block;height:100%;width:0;background:linear-gradient(90deg,#c9d8eb,#d9cce6);border-radius:999px;transition:width .3s ease}.badge-focus-meta{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--sub)}
-.badge-library-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.arch-card{position:relative;background:#fff;border:1px solid #eceff2;border-radius:14px;padding:9px;box-shadow:0 2px 8px rgba(20,30,40,.035);cursor:pointer;transition:transform .16s ease,box-shadow .16s ease}.arch-card:active{transform:scale(.985)}.arch-card.locked{opacity:.55}.arch-art{aspect-ratio:1/1.18;border-radius:10px;overflow:hidden;background:#fff}.arch-name{font-size:13px;font-weight:600;margin-top:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.arch-meta{font-size:10px;color:var(--sub);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.arch-lock{position:absolute;right:10px;top:10px;width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,.88);display:flex;align-items:center;justify-content:center;font-size:12px;border:1px solid #edf0f2}.arch-no{position:absolute;left:12px;top:12px;font-size:9px;letter-spacing:1.5px;color:#8c9299}.badge-detail-sheet{background:#fff;border-radius:18px;width:100%;max-width:440px;max-height:88vh;overflow:auto;padding:18px}.badge-detail-art{border-radius:14px;background:#fff;border:1px solid #eef0f2;overflow:hidden}.badge-detail-info{padding:14px 2px 2px}.badge-detail-info h3{font-size:20px;font-weight:650}.badge-detail-info .year{font-size:12px;color:#7a8088;margin-top:5px}.badge-detail-info .architect{font-size:12px;color:#59616b;margin-top:9px}.badge-detail-note{font-size:11px;color:#9298a0;margin-top:12px;line-height:1.6}.badge-empty{padding:24px 12px;text-align:center;color:var(--sub);font-size:12px}
-@media(max-width:390px){.badge-library-grid{gap:9px}.arch-card{padding:8px}.arch-name{font-size:12px}}
-
-/* Focus mode: deliberately hides elapsed time to protect attention. */
-#focusMode{display:none;position:fixed;inset:0;z-index:99999;background:#F8F6F1;color:#4B4B49;align-items:center;justify-content:center;overflow:hidden;padding:env(safe-area-inset-top,18px) 18px env(safe-area-inset-bottom,18px)}
-#focusMode.active{display:flex}
-.focus-controls{position:absolute;top:calc(16px + env(safe-area-inset-top,0px));left:0;right:0;display:flex;align-items:center;justify-content:flex-end;gap:12px;padding:0 18px;z-index:2}
-.focus-circle{width:50px;height:50px;border:1.5px solid #5C5A56;border-radius:50%;background:rgba(248,246,241,.72);color:#4B4B49;display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:400;line-height:1;backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);touch-action:manipulation}
-.focus-circle.pause{font-size:17px;letter-spacing:1px}
-.focus-center{display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;padding-top:30px}
-.focus-art{width:min(78vw,380px);height:auto;display:block;image-rendering:auto}
-.focus-caption{margin-top:12px;font-size:14px;letter-spacing:3px;color:#77736D}
-.focus-dots{margin-top:8px;font-size:15px;letter-spacing:6px;color:#9B9790}
+/* 专注模式：安静的雨中蘑菇小动画 */
+#focusMode{display:none;position:fixed;inset:0;z-index:3000;background:#F5F1EA;color:#4B4743;overflow:hidden}
+#focusMode.active{display:block}
+.focus-top{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));left:0;right:0;display:flex;justify-content:flex-end;gap:12px;padding:0 16px;z-index:4}
+.focus-round{width:48px;height:48px;border-radius:50%;border:1px solid rgba(75,71,67,.42);background:rgba(255,255,255,.62);color:#4B4743;font-size:22px;display:flex;align-items:center;justify-content:center;box-shadow:none;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);touch-action:manipulation}
+.focus-round:active{transform:scale(.94);background:rgba(255,255,255,.82)}
+.focus-scene{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:70px 20px 80px}
+.focus-scene svg{width:min(92vw,430px);height:auto;overflow:visible}
+.focus-rain line{animation:focusRain 1.15s linear infinite;transform-box:fill-box;transform-origin:center}
+.focus-rain line:nth-child(2n){animation-duration:1.45s;animation-delay:-.35s}.focus-rain line:nth-child(3n){animation-duration:.95s;animation-delay:-.62s}.focus-rain line:nth-child(4n){animation-delay:-.8s}
+@keyframes focusRain{0%{transform:translate3d(10px,-90px,0);opacity:0}12%{opacity:.52}88%{opacity:.48}100%{transform:translate3d(-8px,115px,0);opacity:0}}
+.focus-mushroom{animation:focusSway 4.8s ease-in-out infinite;transform-box:fill-box;transform-origin:50% 92%}
+.focus-mushroom.small{animation-duration:5.6s;animation-delay:-1.4s}.focus-mushroom.tiny{animation-duration:6.2s;animation-delay:-2.1s}
+@keyframes focusSway{0%,100%{transform:rotate(-1.2deg) translateX(-1px)}50%{transform:rotate(1.5deg) translateX(2px)}}
+.focus-face{animation:focusFace 6s ease-in-out infinite}
+.focus-face.alt{animation-delay:-3s}
+@keyframes focusFace{0%,34%,100%{opacity:1}40%,47%{opacity:0}48%,62%{opacity:1}}
+.focus-smile{opacity:0;animation:focusSmile 6s ease-in-out infinite}
+@keyframes focusSmile{0%,34%,100%{opacity:0}40%,47%{opacity:1}48%,62%{opacity:0}}
+.focus-ripple ellipse{animation:focusRipple 3.2s ease-out infinite;transform-box:fill-box;transform-origin:center}
+.focus-ripple ellipse:nth-child(2){animation-delay:-1.6s}
+@keyframes focusRipple{0%{transform:scale(.55);opacity:0}18%{opacity:.4}100%{transform:scale(1.25);opacity:0}}
+.focus-grass{animation:focusGrass 3.8s ease-in-out infinite;transform-box:fill-box;transform-origin:bottom center}
+@keyframes focusGrass{0%,100%{transform:rotate(-1deg)}50%{transform:rotate(2deg)}}
+.focus-caption{position:absolute;left:0;right:0;bottom:calc(26px + env(safe-area-inset-bottom,0px));text-align:center;font-size:13px;letter-spacing:2px;color:#77706A}
+.focus-caption .dots{letter-spacing:4px;margin-top:8px;font-size:11px}
+.focus-paused #focusSceneArt{filter:saturate(.78);opacity:.82}
 
 </style>
 </head>
@@ -148,7 +160,7 @@ button{touch-action:manipulation;-webkit-tap-highlight-color:transparent}button:
 </div>
 
 <div class="container">
-<section id="tab-dashboard" class="tab-content active"><div class="card badge-focus-card" id="badgeFocusCard"></div>
+<section id="tab-dashboard" class="tab-content active">
 <div class="card"><div class="routine-week-head"><button class="btn btn-small btn-secondary" onclick="changeWeek(-1)">‹</button><h2 style="margin:0;justify-content:center;flex:1">▦ 周历 <span class="muted" id="routineWeekTitle"></span></h2><button class="btn btn-small btn-secondary" onclick="changeWeek(1)">›</button></div><div class="routine-grid" id="routineGridContainer"></div><div class="muted" style="text-align:center;margin-top:7px">点击日期切换下方任务 · 左右滑动切换周</div></div>
 <div class="card day-status-card">
 <h2 style="margin-bottom:10px">◌ 当天状态 <span class="muted" id="selectedDateLabel"></span></h2>
@@ -177,15 +189,50 @@ button{touch-action:manipulation;-webkit-tap-highlight-color:transparent}button:
 
 <section id="tab-vulnerability" class="tab-content"><div class="card"><h2>↻ Random <span class="muted">到期回忆</span></h2><p class="muted">低熟悉度知识点会在间隔后自动进入这里，优先处理低分和久未复习内容。</p><div id="randomList"></div></div><div class="card"><h2>! 专业课细节点漏洞本 <button class="btn btn-small" onclick="openVulnerabilityModal()">+ 记个小漏洞</button></h2><p class="muted" style="margin-bottom:8px">记录知道但无法完整复述的知识点。<span style="display:block;margin-top:3px">手机端左滑记录即可显示“修改 / 删除”。</span></p><div id="vulnerabilityListContainer"></div></div></section>
 
-<section id="tab-familiarity" class="tab-content"><div class="card"><h2>◔ 熟悉度追踪 <span class="muted">长期变化</span></h2><p class="muted" style="margin-bottom:10px">这里只统计已经完成过五题回忆的知识点。每次回忆都会留下历史记录。</p><div class="fam-filter"><input id="famSearch" placeholder="搜索知识点" oninput="renderFamiliarity()"><select id="famSort" onchange="renderFamiliarity()"><option value="low">当前熟悉度最低</option><option value="recent">最近测试</option><option value="old">最久未测试</option><option value="count">测试次数最多</option></select></div><div id="familiarityList" style="margin-top:10px"></div></div><div class="card"><h2>◌ 熟悉度说明</h2><p class="muted" style="line-height:1.7">五题平均分会转换为百分制。历史记录不会被新一次回忆覆盖，因此可以观察“记住 → 遗忘 → 再记住”的变化。</p></div></section><section id="tab-badges" class="tab-content">
-<div class="card" style="background:linear-gradient(135deg,#fff 0%,#fbfcff 58%,#faf9fc 100%);border-color:#edf0f4">
-<h2><span>◌ 建筑徽章库</span><span class="muted" id="badgeLibraryCount"></span></h2>
-<p class="muted" style="line-height:1.6;margin-bottom:12px">累计专注每 7 小时获得 1 枚。徽章只记录累计专注，不因单个任务重置而消失。</p>
-<div class="badge-library-grid" id="badgeLibraryGrid"></div>
-</div></section>
-
-<section id="tab-settings" class="tab-content"><div class="card"><h2>▥ 每周自动学习总结</h2><div id="weeklySummaryContent" style="background:#F9F9FB;padding:12px;border-radius:8px;font-size:13px;line-height:1.5;border:.5px solid var(--line);margin-bottom:12px"></div><div id="weeklyChart"></div><div id="weeklyTimeChart"></div><button class="btn btn-secondary" onclick="renderWeeklySummary()">🔄 刷新周报数据</button></div><div class="card"><h2>▦ 月度学习总结</h2><div id="monthlySummaryContent" style="background:#F9F9FB;padding:12px;border-radius:8px;font-size:13px;line-height:1.5;border:.5px solid var(--line);margin-bottom:12px"></div><div id="monthlyChart"></div><button class="btn btn-secondary" onclick="renderMonthlySummary()">🔄 刷新月报数据</button></div>
+<section id="tab-familiarity" class="tab-content"><div class="card"><h2>◔ 熟悉度追踪 <span class="muted">长期变化</span></h2><p class="muted" style="margin-bottom:10px">这里只统计已经完成过五题回忆的知识点。每次回忆都会留下历史记录。</p><div class="fam-filter"><input id="famSearch" placeholder="搜索知识点" oninput="renderFamiliarity()"><select id="famSort" onchange="renderFamiliarity()"><option value="low">当前熟悉度最低</option><option value="recent">最近测试</option><option value="old">最久未测试</option><option value="count">测试次数最多</option></select></div><div id="familiarityList" style="margin-top:10px"></div></div><div class="card"><h2>◌ 熟悉度说明</h2><p class="muted" style="line-height:1.7">五题平均分会转换为百分制。历史记录不会被新一次回忆覆盖，因此可以观察“记住 → 遗忘 → 再记住”的变化。</p></div></section><section id="tab-settings" class="tab-content"><div class="card"><h2>▥ 每周自动学习总结</h2><div id="weeklySummaryContent" style="background:#F9F9FB;padding:12px;border-radius:8px;font-size:13px;line-height:1.5;border:.5px solid var(--line);margin-bottom:12px"></div><div id="weeklyChart"></div><div id="weeklyTimeChart"></div><button class="btn btn-secondary" onclick="renderWeeklySummary()">🔄 刷新周报数据</button></div><div class="card"><h2>▦ 月度学习总结</h2><div id="monthlySummaryContent" style="background:#F9F9FB;padding:12px;border-radius:8px;font-size:13px;line-height:1.5;border:.5px solid var(--line);margin-bottom:12px"></div><div id="monthlyChart"></div><button class="btn btn-secondary" onclick="renderMonthlySummary()">🔄 刷新月报数据</button></div>
 </section>
+</div>
+
+
+<div id="focusMode" aria-hidden="true">
+  <div class="focus-top">
+    <button id="focusExitBtn" class="focus-round" aria-label="退出专注">×</button>
+    <button id="focusPauseBtn" class="focus-round" aria-label="暂停计时">Ⅱ</button>
+  </div>
+  <div class="focus-scene" id="focusScene">
+    <svg id="focusSceneArt" viewBox="0 0 420 560" role="img" aria-label="雨中的手绘蘑菇">
+      <g class="focus-rain" stroke="#8EA9B8" stroke-width="2.2" stroke-linecap="round" opacity=".48">
+        <line x1="58" y1="80" x2="45" y2="113"/><line x1="112" y1="38" x2="100" y2="69"/><line x1="171" y1="92" x2="160" y2="124"/><line x1="232" y1="45" x2="220" y2="78"/><line x1="293" y1="92" x2="281" y2="126"/><line x1="356" y1="48" x2="344" y2="81"/>
+        <line x1="28" y1="154" x2="16" y2="188"/><line x1="91" y1="138" x2="79" y2="170"/><line x1="145" y1="166" x2="133" y2="199"/><line x1="270" y1="146" x2="258" y2="180"/><line x1="331" y1="163" x2="319" y2="196"/><line x1="390" y1="135" x2="378" y2="168"/>
+        <line x1="55" y1="225" x2="43" y2="259"/><line x1="116" y1="246" x2="104" y2="278"/><line x1="202" y1="216" x2="190" y2="250"/><line x1="309" y1="234" x2="297" y2="268"/><line x1="365" y1="260" x2="353" y2="293"/>
+      </g>
+      <g class="focus-grass" fill="none" stroke="#829A80" stroke-width="2" stroke-linecap="round" opacity=".65">
+        <path d="M86 431q-8-16-1-31M94 431q5-18 14-26M320 431q-5-19 1-31M329 431q9-15 18-20M146 435q-4-13 1-23M270 435q5-15 1-26"/>
+      </g>
+      <g class="focus-ripple" fill="none" stroke="#A5B9C0" stroke-width="1.6" opacity=".52"><ellipse cx="207" cy="438" rx="86" ry="13"/><ellipse cx="207" cy="438" rx="86" ry="13"/></g>
+      <g class="focus-mushroom small">
+        <path d="M77 411c-2-36 3-66 28-71 25 5 31 36 28 71" fill="#E5CDBB" stroke="#5B5550" stroke-width="2.2"/>
+        <path d="M94 342c-14-17-1-43 20-43 21 0 31 26 17 43-8 9-29 9-37 0z" fill="#C99E86" stroke="#5B5550" stroke-width="2.2"/>
+        <path d="M91 350q19-9 37 0" fill="none" stroke="#8D6F61" stroke-width="1.4" opacity=".65"/>
+        <circle cx="104" cy="378" r="2.2" fill="#5B5550"/><path d="M112 387q5 5 10 0" fill="none" stroke="#5B5550" stroke-width="1.5" stroke-linecap="round"/>
+      </g>
+      <g class="focus-mushroom tiny">
+        <path d="M300 423c-1-25 3-45 17-49 15 4 19 24 17 49" fill="#D9D0C2" stroke="#5B5550" stroke-width="2"/>
+        <path d="M306 375c-9-12-1-29 13-29 14 0 20 17 12 29-6 7-19 7-25 0z" fill="#A7B39C" stroke="#5B5550" stroke-width="2"/>
+        <circle cx="314" cy="401" r="1.7" fill="#5B5550"/><circle cx="322" cy="401" r="1.7" fill="#5B5550"/>
+      </g>
+      <g class="focus-mushroom">
+        <path d="M161 424c-4-57 0-103 35-112 34 9 40 55 35 112" fill="#E8D9C8" stroke="#504B47" stroke-width="2.6"/>
+        <path d="M174 314c-17-20-1-58 29-58 30 0 47 37 28 58-11 12-45 13-57 0z" fill="#D3A78E" stroke="#504B47" stroke-width="2.6"/>
+        <path d="M176 316q28-13 56 0" fill="none" stroke="#967666" stroke-width="1.7" opacity=".7"/>
+        <path d="M186 281q7-10 14-19M201 278q7-12 14-18M217 281q7-9 12-15" fill="none" stroke="#A88775" stroke-width="1.4" opacity=".65"/>
+        <g class="focus-face"><path d="M188 347q3-6 6 0M219 347q3-6 6 0" fill="none" stroke="#504B47" stroke-width="2.2" stroke-linecap="round"/><circle cx="183" cy="359" r="3.2" fill="#D99B92" opacity=".5"/><circle cx="231" cy="359" r="3.2" fill="#D99B92" opacity=".5"/><path d="M201 359q5 4 10 0" fill="none" stroke="#504B47" stroke-width="1.8" stroke-linecap="round"/></g>
+        <g class="focus-smile"><path d="M188 345q3-4 6 0M219 345q3-4 6 0" fill="none" stroke="#504B47" stroke-width="2.2" stroke-linecap="round"/><circle cx="183" cy="358" r="3.2" fill="#D99B92" opacity=".65"/><circle cx="231" cy="358" r="3.2" fill="#D99B92" opacity=".65"/><path d="M199 357q7 9 14 0" fill="none" stroke="#504B47" stroke-width="1.8" stroke-linecap="round"/></g>
+        <path d="M194 424q4 5 9 0M216 424q4 5 9 0" fill="none" stroke="#504B47" stroke-width="2" stroke-linecap="round"/>
+      </g>
+    </svg>
+  </div>
+  <div class="focus-caption"><div id="focusCaptionText">专注中</div><div class="dots">· · ·</div></div>
 </div>
 
 <div id="genericModal" class="modal"><div class="modal-content"><h2 id="genericTitle" style="margin-bottom:10px"></h2><div id="genericBody"></div><button class="btn btn-secondary" onclick="closeModal()" style="margin-top:15px">关闭</button></div></div><input id="importFileInput" type="file" accept="application/json,.json" style="display:none" onchange="handleImportFile(event)">
@@ -195,8 +242,7 @@ button{touch-action:manipulation;-webkit-tap-highlight-color:transparent}button:
 <div id="recallModal" class="modal recall-lock"><div class="modal-content" style="position:relative"><button class="recall-close" aria-label="退出五题回忆检测" onclick="closeRecall()">×</button><h2>◎ 五题回忆检测</h2><div id="recallProgress" class="recall-progress"></div><div id="recallBody"></div></div></div>
 <div id="vulnModal" class="modal"><div class="modal-content"><h2 id="vulnModalTitle">! 记个未完全掌握的细节点</h2><label class="muted">细节点描述：</label><textarea id="vulnDesc" rows="4"></textarea><div style="display:flex;gap:10px"><button class="btn" onclick="saveVulnerability()">保存</button><button class="btn btn-secondary" onclick="closeVulnerabilityModal()">取消</button></div></div></div>
 
-<div id="badgeDetailModal" class="modal" onclick="if(event.target===this)closeBadgeDetail()"><div class="badge-detail-sheet"><button class="recall-close" aria-label="关闭徽章详情" onclick="closeBadgeDetail()">×</button><div id="badgeDetailBody"></div></div></div>
-<nav class="tab-bar"><div class="tab-item active" onclick="switchTab('dashboard',this)"><span>▦</span>看板</div><div class="tab-item" onclick="switchTab('daily',this)"><span>◷</span>每日任务</div><div class="tab-item" onclick="switchTab('english',this)"><span>A</span>英语</div><div class="tab-item" onclick="switchTab('vulnerability',this)"><span>!</span>专业漏洞</div><div class="tab-item" onclick="switchTab('familiarity',this)"><span>◔</span>熟悉度</div><div class="tab-item" onclick="switchTab('badges',this)"><span>◇</span>徽章</div><div class="tab-item" onclick="switchTab('settings',this)"><span>▥</span>周报</div></nav>
+<nav class="tab-bar"><div class="tab-item active" onclick="switchTab('dashboard',this)"><span>▦</span>看板</div><div class="tab-item" onclick="switchTab('daily',this)"><span>◷</span>每日任务</div><div class="tab-item" onclick="switchTab('english',this)"><span>A</span>英语</div><div class="tab-item" onclick="switchTab('vulnerability',this)"><span>!</span>专业漏洞</div><div class="tab-item" onclick="switchTab('familiarity',this)"><span>◔</span>熟悉度</div><div class="tab-item" onclick="switchTab('settings',this)"><span>▥</span>周报</div></nav>
 
 <script>
 const KEY='zhuxi_v1_2_';
@@ -220,7 +266,7 @@ function openZhuxiDB(){
   });
   return dbPromise;
 }
-function makeLocalSnapshot(){return {tasks,subjectTree,englishErrors,vulnerabilities,moods,coffees,distracts,familiarityHistory,studyTimeData,badgeProgress,version:4,updated_at:new Date().toISOString()}}
+function makeLocalSnapshot(){return {tasks,subjectTree,englishErrors,vulnerabilities,moods,coffees,distracts,familiarityHistory,studyTimeData,version:3,updated_at:new Date().toISOString()}}
 function writeSnapshotToIDB(){
   return openZhuxiDB().then(db=>{if(!db)return;return new Promise(resolve=>{
     try{const tx=db.transaction(ZHUXI_STORE,'readwrite');tx.objectStore(ZHUXI_STORE).put(makeLocalSnapshot(),'current');tx.oncomplete=()=>resolve();tx.onerror=()=>resolve();}
@@ -235,10 +281,10 @@ async function loadLocalSnapshot(){
   if(!snap)return false;
   const localExists=['tasks','tree','english_errors','vulnerabilities','moods','coffees','distracts','familiarity_history','study_time'].some(k=>localStorage.getItem(KEY+k)!==null);
   if(!localExists){
-    tasks=Array.isArray(snap.tasks)?snap.tasks:tasks; subjectTree=snap.subjectTree||subjectTree; englishErrors=Array.isArray(snap.englishErrors)?snap.englishErrors:englishErrors; vulnerabilities=Array.isArray(snap.vulnerabilities)?snap.vulnerabilities:vulnerabilities; moods=snap.moods||moods; coffees=snap.coffees||coffees; distracts=snap.distracts||distracts; familiarityHistory=Array.isArray(snap.familiarityHistory)?snap.familiarityHistory:familiarityHistory; studyTimeData=snap.studyTimeData&&typeof snap.studyTimeData==='object'?snap.studyTimeData:studyTimeData; badgeProgress=snap.badgeProgress&&typeof snap.badgeProgress==='object'?snap.badgeProgress:badgeProgress;
-    localStorage.setItem(KEY+'tasks',JSON.stringify(tasks));localStorage.setItem(KEY+'tree',JSON.stringify(subjectTree));localStorage.setItem(KEY+'english_errors',JSON.stringify(englishErrors));localStorage.setItem(KEY+'vulnerabilities',JSON.stringify(vulnerabilities));localStorage.setItem(KEY+'moods',JSON.stringify(moods));localStorage.setItem(KEY+'coffees',JSON.stringify(coffees));localStorage.setItem(KEY+'distracts',JSON.stringify(distracts));localStorage.setItem(KEY+'familiarity_history',JSON.stringify(familiarityHistory));localStorage.setItem(KEY+'study_time',JSON.stringify(studyTimeData));localStorage.setItem(KEY+'badge_progress',JSON.stringify(badgeProgress));
+    tasks=Array.isArray(snap.tasks)?snap.tasks:tasks; subjectTree=snap.subjectTree||subjectTree; englishErrors=Array.isArray(snap.englishErrors)?snap.englishErrors:englishErrors; vulnerabilities=Array.isArray(snap.vulnerabilities)?snap.vulnerabilities:vulnerabilities; moods=snap.moods||moods; coffees=snap.coffees||coffees; distracts=snap.distracts||distracts; familiarityHistory=Array.isArray(snap.familiarityHistory)?snap.familiarityHistory:familiarityHistory; studyTimeData=snap.studyTimeData&&typeof snap.studyTimeData==='object'?snap.studyTimeData:studyTimeData;
+    localStorage.setItem(KEY+'tasks',JSON.stringify(tasks));localStorage.setItem(KEY+'tree',JSON.stringify(subjectTree));localStorage.setItem(KEY+'english_errors',JSON.stringify(englishErrors));localStorage.setItem(KEY+'vulnerabilities',JSON.stringify(vulnerabilities));localStorage.setItem(KEY+'moods',JSON.stringify(moods));localStorage.setItem(KEY+'coffees',JSON.stringify(coffees));localStorage.setItem(KEY+'distracts',JSON.stringify(distracts));localStorage.setItem(KEY+'familiarity_history',JSON.stringify(familiarityHistory));localStorage.setItem(KEY+'study_time',JSON.stringify(studyTimeData));
   } else if(localStorage.getItem(KEY+'study_time')===null && snap.studyTimeData){
-    studyTimeData=snap.studyTimeData;localStorage.setItem(KEY+'study_time',JSON.stringify(studyTimeData)); if(snap.badgeProgress){badgeProgress=snap.badgeProgress;localStorage.setItem(KEY+'badge_progress',JSON.stringify(badgeProgress));}
+    studyTimeData=snap.studyTimeData;localStorage.setItem(KEY+'study_time',JSON.stringify(studyTimeData));
   }
   localStorage.setItem(KEY+'idb_migrated','1'); return true;
 }
@@ -251,12 +297,6 @@ let coffees=getData('coffees',{});
 let distracts=getData('distracts',{});
 let familiarityHistory=getData('familiarity_history',[]);
 let studyTimeData=getData('study_time',{});
-let badgeProgress=getData('badge_progress',{totalFocusSeconds:0,unlocked:0});
-if(!localStorage.getItem(KEY+'badge_progress')){
-  const legacyTotal=Object.values(studyTimeData||{}).reduce((a,e)=>a+(Number(e?.total)||0),0);
-  badgeProgress={totalFocusSeconds:legacyTotal,unlocked:Math.min(20,Math.floor(legacyTotal/25200))};
-  localStorage.setItem(KEY+'badge_progress',JSON.stringify(badgeProgress));
-}
 let activeTimerTaskId=null, activeTimerStartedAt=0, timerTickHandle=null;
 let editingEnglishId=null,editingVulnId=null;
 let localMode=true;
@@ -276,12 +316,12 @@ normalizeTaskData();
 
 
 function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
-function switchTab(id,el){document.querySelectorAll('.tab-content').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.tab-item').forEach(x=>x.classList.remove('active'));document.getElementById('tab-'+id).classList.add('active');el.classList.add('active');if(id==='dashboard')renderDashboard();if(id==='daily')renderDailyPage();if(id==='english')renderEnglishErrors();if(id==='vulnerability'){renderVulnerabilities();renderRandom()}if(id==='familiarity')renderFamiliarity();if(id==='badges')renderBadgeLibrary();if(id==='settings'){renderWeeklySummary();renderMonthlySummary()}}
+function switchTab(id,el){document.querySelectorAll('.tab-content').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.tab-item').forEach(x=>x.classList.remove('active'));document.getElementById('tab-'+id).classList.add('active');el.classList.add('active');if(id==='dashboard')renderDashboard();if(id==='daily')renderDailyPage();if(id==='english')renderEnglishErrors();if(id==='vulnerability'){renderVulnerabilities();renderRandom()}if(id==='familiarity')renderFamiliarity();if(id==='settings'){renderWeeklySummary();renderMonthlySummary()}}
 function refreshDateContext(){const now=localDateString();if(now!==todayStr){const old=todayStr;todayStr=now;if(selectedDate===old || !selectedDate)selectedDate=now;weekCursor=getMonday(now)}}
 function startDateWatcher(){setInterval(()=>{applyTimeBackground();const old=todayStr;const now=localDateString();if(now!==old){todayStr=now;if(selectedDate===old)selectedDate=now;weekCursor=getMonday(now);renderDashboard()}},60000)}
 
-function applyTimeBackground(){let h=new Date().getHours(),c=h>=6&&h<10?'#F1F5FA':h>=10&&h<16?'#FBF3E8':h>=16&&h<20?'#F8EEF3':h>=20&&h<24?'#F1ECF7':'#ECECEF';document.documentElement.style.setProperty('--time-bg',c);document.body.style.backgroundColor=c;document.documentElement.style.backgroundColor=c}
-function renderDashboard(){refreshDateContext();renderRoutine();renderMonth();renderDayStatus();renderTasks();renderStudyStats();renderDailyStats();renderDailyPage();renderBadgeFocusCard()}
+function applyTimeBackground(){let h=new Date().getHours(),c=h>=6&&h<10?'#F1F5FA':h>=10&&h<16?'#FBF3E8':h>=16&&h<20?'#F8EEF3':h>=20&&h<24?'#F1ECF7':'#ECECEF';document.documentElement.style.setProperty('--time-bg',c);document.body.style.backgroundColor=c}
+function renderDashboard(){refreshDateContext();renderRoutine();renderMonth();renderDayStatus();renderTasks();renderStudyStats();renderDailyStats();renderDailyPage()}
 
 function secondsForDate(ds){let total=0;tasks.forEach(t=>{if(t.date!==ds)return;let e=studyTimeData[String(t.id)];if(!e)return;total+=Number(e.total)||0;if(e.running&&e.startedAt)total+=Math.max(0,Math.floor((Date.now()-e.startedAt)/1000))});return total}
 function renderDailyStats(){const el=document.getElementById('dailyStudyTimeContainer');if(!el)return;const ds=selectedDate||todayStr,groups=['英语','政治','专业课','其他'];let vals=groups.map(subject=>{let sec=0;tasks.filter(t=>t.date===ds&&t.subject===subject).forEach(t=>{let e=studyTimeData[String(t.id)];if(e){sec+=Number(e.total)||0;if(e.running&&e.startedAt)sec+=Math.max(0,Math.floor((Date.now()-e.startedAt)/1000))}});return {subject,sec}});let total=vals.reduce((a,x)=>a+x.sec,0);el.innerHTML=`<div class="daily-time-grid">${vals.map(x=>`<div class="daily-time-item"><div class="daily-time-subject">${x.subject}</div><b>${formatStudySeconds(x.sec)}</b></div>`).join('')}</div><div class="daily-total">今日总计 <b>${formatStudySeconds(total)}</b></div>`}
@@ -372,8 +412,7 @@ function moodFace(type,small=false){
   const id=legacy[type]||type||'mood4';
   const known=MOODS.some(m=>m.id===id);
   const safeId=known?id:'mood4';
-  const size=small?'width:22px;height:22px':'width:30px;height:30px';
-  return `<img class="mood-face" src="moods/${safeId}.png" alt="" loading="eager" decoding="async" style="${size};object-fit:contain;display:inline-block;vertical-align:middle;border-radius:50%;background:#fff" onerror="this.onerror=null;this.src='./moods/${safeId}.png'">`;
+  return `<img class="mood-face" src="./moods/${safeId}.png" alt=""${small?' style="width:20px;height:20px"':''}>`;
 }
 const MOODS=[
   {id:'mood1',name:'崩溃大哭'},
@@ -432,65 +471,29 @@ function formatStudySeconds(sec){sec=Math.max(0,Math.floor(Number(sec)||0));let 
 function getTaskStudySeconds(id){let e=studyTimeData[String(id)];return Number(e?.total)||0}
 function timerReconcile(){if(activeTimerTaskId==null)return;let e=studyTimeData[String(activeTimerTaskId)];if(!e||!e.running||!e.startedAt){activeTimerTaskId=null;return}if(!tasks.some(t=>String(t.id)===String(activeTimerTaskId))){activeTimerTaskId=null;return}}
 function saveStudyTime(){saveData('study_time',studyTimeData)}
-const BADGE_HOURS=7, BADGE_SECONDS=BADGE_HOURS*3600;
-const ARCH_BADGES=[
- {id:1,name:'祈年殿',year:'1420',architect:'—',type:'qinian',origin:'中国·北京·天坛'},
- {id:2,name:'太和殿',year:'1420（现存形制 1695）',architect:'—',type:'taihe',origin:'中国·北京·故宫'},
- {id:3,name:'应县木塔',year:'1056',architect:'—',type:'yingxian',origin:'中国·山西·应县'},
- {id:4,name:'佛光寺东大殿',year:'857',architect:'—',type:'foguang',origin:'中国·山西·五台'},
- {id:5,name:'拙政园',year:'1509',architect:'王献臣 / 文徵明（设计参与）',type:'zhuozheng',origin:'中国·江苏·苏州'},
- {id:6,name:'赵州桥',year:'约605–618',architect:'李春',type:'zhaozhou',origin:'中国·河北·赵县'},
- {id:7,name:'苏州博物馆',year:'2006',architect:'贝聿铭',type:'suzhoumuseum',origin:'中国·江苏·苏州'},
- {id:8,name:'福建土楼',year:'明清时期',architect:'—',type:'tulou',origin:'中国·福建·闽西南'},
- {id:9,name:'岳阳楼',year:'220–589（现存楼制 1984 重建）',architect:'—',type:'yueyang',origin:'中国·湖南·岳阳'},
- {id:10,name:'黄鹤楼',year:'223（现楼 1985 重建）',architect:'—',type:'yellowcrane',origin:'中国·湖北·武汉'},
- {id:11,name:'萨伏伊别墅',year:'1928–1931',architect:'勒·柯布西耶 / 皮埃尔·让纳雷',type:'savoye',origin:'法国·普瓦西'},
- {id:12,name:'朗香教堂',year:'1950–1955',architect:'勒·柯布西耶',type:'ronchamp',origin:'法国·朗香'},
- {id:13,name:'巴塞罗那德国馆',year:'1929',architect:'密斯·凡·德·罗 / 莉莉·赖希',type:'barcelona',origin:'西班牙·巴塞罗那'},
- {id:14,name:'落水山庄',year:'1935',architect:'弗兰克·劳埃德·赖特',type:'fallingwater',origin:'美国·宾夕法尼亚'},
- {id:15,name:'悉尼歌剧院',year:'1973',architect:'约恩·乌松',type:'sydney',origin:'澳大利亚·悉尼'},
- {id:16,name:'古根海姆博物馆',year:'1959',architect:'弗兰克·劳埃德·赖特',type:'guggenheim',origin:'美国·纽约'},
- {id:17,name:'范斯沃斯住宅',year:'1951',architect:'密斯·凡·德·罗',type:'farnsworth',origin:'美国·伊利诺伊'},
- {id:18,name:'蓬皮杜中心',year:'1977',architect:'伦佐·皮亚诺 / 理查德·罗杰斯',type:'pompidou',origin:'法国·巴黎'},
- {id:19,name:'西格拉姆大厦',year:'1958',architect:'密斯·凡·德·罗 / 菲利普·约翰逊',type:'seagram',origin:'美国·纽约'},
- {id:20,name:'索尔克研究所',year:'1965',architect:'路易斯·康',type:'salk',origin:'美国·拉霍亚'}
-];
-function badgeUnlockCount(){return Math.min(ARCH_BADGES.length,Math.floor(Math.max(0,Number(badgeProgress.totalFocusSeconds)||0)/BADGE_SECONDS))}
-function saveBadgeProgress(){badgeProgress.unlocked=badgeUnlockCount();saveData('badge_progress',badgeProgress)}
-function addBadgeFocusSeconds(delta){delta=Math.max(0,Math.floor(Number(delta)||0));if(!delta)return;badgeProgress.totalFocusSeconds=(Number(badgeProgress.totalFocusSeconds)||0)+delta;saveBadgeProgress();renderBadgeFocusCard();if(document.getElementById('tab-badges')?.classList.contains('active'))renderBadgeLibrary()}
-let focusModeTaskId=null;
-function showFocusMode(id){
-  focusModeTaskId=id;
-  const el=document.getElementById('focusMode');
-  if(el){el.classList.add('active');el.setAttribute('aria-hidden','false');}
-}
-function hideFocusMode(){
-  const el=document.getElementById('focusMode');
-  if(el){el.classList.remove('active');el.setAttribute('aria-hidden','true');}
-  focusModeTaskId=null;
-}
-function pauseFocusMode(){
-  if(focusModeTaskId!=null) pauseTaskTimer(focusModeTaskId);
-  else hideFocusMode();
-}
-function exitFocusMode(){
-  if(focusModeTaskId!=null) pauseTaskTimer(focusModeTaskId);
-  else hideFocusMode();
-}
 function startTaskTimer(id){
   const t=tasks.find(x=>String(x.id)===String(id));if(!t)return;
   if(activeTimerTaskId!=null&&String(activeTimerTaskId)!==String(id))pauseTaskTimer(activeTimerTaskId);
   const key=String(id),e=studyTimeData[key]||{total:0,running:false,startedAt:null,date:t.date||todayStr};
   if(e.running)return;
-  e.running=true;e.startedAt=Date.now();e.date=t.date||todayStr;studyTimeData[key]=e;activeTimerTaskId=id;activeTimerStartedAt=e.startedAt;saveStudyTime();startTimerTicker();renderDashboard();showFocusMode(id);
+  e.running=true;e.startedAt=Date.now();e.date=t.date||todayStr;studyTimeData[key]=e;activeTimerTaskId=id;activeTimerStartedAt=e.startedAt;saveStudyTime();startTimerTicker();renderDashboard();openFocusMode(id);
 }
-function accrueTaskTimer(id){const e=studyTimeData[String(id)];if(!e?.running||!e.startedAt)return 0;const now=Date.now(),delta=Math.max(0,Math.floor((now-e.startedAt)/1000));if(delta>0){e.total=(Number(e.total)||0)+delta;e.startedAt=now;studyTimeData[String(id)]=e;saveStudyTime();addBadgeFocusSeconds(delta)}return delta}
-function pauseTaskTimer(id){const key=String(id),e=studyTimeData[key];if(!e?.running)return;accrueTaskTimer(id);e.running=false;e.startedAt=null;studyTimeData[key]=e;if(String(activeTimerTaskId)===key){activeTimerTaskId=null;activeTimerStartedAt=0;stopTimerTicker()}if(String(focusModeTaskId)===key)hideFocusMode();saveStudyTime();renderDashboard()}
-function resetTaskTimer(id){const key=String(id);if(String(activeTimerTaskId)===key){const e=studyTimeData[key];if(e?.running){e.running=false;e.startedAt=null}activeTimerTaskId=null;stopTimerTicker()}if(String(focusModeTaskId)===key)hideFocusMode();studyTimeData[key]={total:0,running:false,startedAt:null,date:tasks.find(t=>String(t.id)===key)?.date||todayStr};saveStudyTime();renderDashboard()}
+function accrueTaskTimer(id){const e=studyTimeData[String(id)];if(!e?.running||!e.startedAt)return 0;const now=Date.now(),delta=Math.max(0,Math.floor((now-e.startedAt)/1000));if(delta>0){e.total=(Number(e.total)||0)+delta;e.startedAt=now;studyTimeData[String(id)]=e;saveStudyTime()}return delta}
+function pauseTaskTimer(id){const key=String(id),e=studyTimeData[key];if(!e?.running)return;accrueTaskTimer(id);e.running=false;e.startedAt=null;studyTimeData[key]=e;if(String(activeTimerTaskId)===key){activeTimerTaskId=null;activeTimerStartedAt=0;stopTimerTicker()}saveStudyTime();renderDashboard()}
+function resetTaskTimer(id){const key=String(id);if(String(activeTimerTaskId)===key){const e=studyTimeData[key];if(e?.running){e.running=false;e.startedAt=null}activeTimerTaskId=null;stopTimerTicker()}studyTimeData[key]={total:0,running:false,startedAt:null,date:tasks.find(t=>String(t.id)===key)?.date||todayStr};saveStudyTime();renderDashboard()}
 function toggleTaskTimer(id){const e=studyTimeData[String(id)];if(e?.running)pauseTaskTimer(id);else startTaskTimer(id)}
-function startTimerTicker(){if(timerTickHandle)return;timerTickHandle=setInterval(()=>{if(activeTimerTaskId==null)return;const e=studyTimeData[String(activeTimerTaskId)];if(!e?.running){stopTimerTicker();return}accrueTaskTimer(activeTimerTaskId);renderTaskTimersOnly();},1000)}
+function startTimerTicker(){if(timerTickHandle)return;timerTickHandle=setInterval(()=>{if(activeTimerTaskId==null)return;const e=studyTimeData[String(activeTimerTaskId)];if(!e?.running){stopTimerTicker();return}renderTaskTimersOnly();},1000)}
 function stopTimerTicker(){if(timerTickHandle){clearInterval(timerTickHandle);timerTickHandle=null}}
-function renderTaskTimersOnly(){document.querySelectorAll('[data-task-timer]').forEach(el=>{const id=el.dataset.taskTimer,e=studyTimeData[String(id)]||{},live=(e.running&&e.startedAt)?Math.floor((Date.now()-e.startedAt)/1000):0,total=(Number(e.total)||0)+live;el.querySelector('.timer-time')?.replaceChildren(document.createTextNode(formatStudySeconds(total)));const b=el.querySelector('.timer-main');if(b)b.textContent=e.running?'暂停':'开始';});renderBadgeFocusCard()}
+function renderTaskTimersOnly(){document.querySelectorAll('[data-task-timer]').forEach(el=>{const id=el.dataset.taskTimer,e=studyTimeData[String(id)]||{},live=(e.running&&e.startedAt)?Math.floor((Date.now()-e.startedAt)/1000):0;const total=(Number(e.total)||0)+live;el.querySelector('.timer-time')?.replaceChildren(document.createTextNode(formatStudySeconds(total)));const b=el.querySelector('.timer-main');if(b)b.textContent=e.running?'暂停':'开始';})}
+
+let focusModeTaskId=null;
+function openFocusMode(id){focusModeTaskId=id;const el=document.getElementById('focusMode');if(!el)return;el.classList.add('active');el.classList.remove('focus-paused');el.setAttribute('aria-hidden','false');updateFocusControls();}
+function closeFocusMode(){const el=document.getElementById('focusMode');if(!el)return;el.classList.remove('active','focus-paused');el.setAttribute('aria-hidden','true');focusModeTaskId=null;}
+function updateFocusControls(){const e=studyTimeData[String(focusModeTaskId)];const b=document.getElementById('focusPauseBtn');if(b)b.textContent=e?.running?'Ⅱ':'▶';document.getElementById('focusMode')?.classList.toggle('focus-paused',!!e&&!e.running);}
+function toggleFocusPause(){if(focusModeTaskId==null)return;const e=studyTimeData[String(focusModeTaskId)];if(e?.running)pauseTaskTimer(focusModeTaskId);else startTaskTimer(focusModeTaskId);updateFocusControls();}
+function exitFocusMode(){if(focusModeTaskId!=null){const e=studyTimeData[String(focusModeTaskId)];if(e?.running)pauseTaskTimer(focusModeTaskId)}closeFocusMode();}
+document.addEventListener('DOMContentLoaded',()=>{document.getElementById('focusExitBtn')?.addEventListener('click',exitFocusMode);document.getElementById('focusPauseBtn')?.addEventListener('click',toggleFocusPause)});
+
 function toggleTask(id){
   const t=tasks.find(x=>String(x.id)===String(id));
   if(!t)return;
@@ -525,43 +528,10 @@ function saveCoffee(ds){let type=document.getElementById('coffeeType_'+ds)?.valu
 function openTaskModal(){closeAllSwipeRows();document.getElementById('genericTitle').textContent='➕ 添加学习任务';document.getElementById('genericBody').innerHTML=taskForm()+`<button class="btn" onclick="saveNewTask()" style="margin-top:10px">保存任务</button>`;document.getElementById('genericModal').classList.add('active')}
 function saveNewTask(){let title=document.getElementById('newTaskTitle').value.trim(),selected=document.getElementById('newTaskSubject').value;tasks.unshift({id:Date.now(),title,subject:subjects.includes(selected)?selected:'其他',customSubject:false,date:document.getElementById('newTaskDate').value||todayStr,completed:false,difficulty:+document.getElementById('newTaskDifficulty').value||3,mastery:null,recall:[],repeat:false});saveData('tasks',tasks);closeModal();renderDashboard()}
 function closeModal(){document.getElementById('genericModal').classList.remove('active')}
-function archSvg(type,locked=false){
- const stroke=locked?'#b9bec5':'#626b75', soft=locked?'#eef0f2':'#edf1f3', accent=locked?'#d9dcdf':'#d8c7ae', green=locked?'#e4e7e9':'#d7e0da', blue=locked?'#e1e5e8':'#d8e3ed', warm=locked?'#e5e7e9':'#e5d5c4';
- let art='';
- const line=`fill="none" stroke="${stroke}" stroke-linecap="round" stroke-linejoin="round"`;
- if(type==='qinian') art=`<path d="M18 103H142" ${line} stroke-width="2"/><path d="M28 99L38 76H122L132 99" fill="${soft}" stroke="${stroke}" stroke-width="1.8"/><path d="M39 76Q80 47 121 76" ${line} stroke-width="2.4"/><path d="M49 72Q80 53 111 72" ${line} stroke="${accent}" stroke-width="5"/><path d="M50 76V99M64 72V99M96 72V99M110 76V99" ${line} stroke-width="2"/><path d="M36 99Q80 108 124 99" ${line} stroke="${green}" stroke-width="5"/>`;
- if(type==='taihe') art=`<path d="M17 104H143" ${line} stroke-width="2"/><path d="M28 98L35 79H125L132 98" fill="${soft}" stroke="${stroke}"/><path d="M35 79L43 68H117L125 79" fill="${accent}" stroke="${stroke}"/><path d="M43 68L52 57H108L117 68" fill="${soft}" stroke="${stroke}"/><path d="M44 79V98M58 79V98M72 79V98M88 79V98M102 79V98M116 79V98" ${line} stroke-width="1.8"/>`;
- if(type==='yingxian') art=`<path d="M33 101L37 45L48 34L59 45L63 101M69 101L73 45L84 34L95 45L99 101" ${line} stroke-width="2"/><path d="M30 45H102M33 57H99M32 69H100M31 81H101M30 93H102" ${line} stroke-width="1.7"/><path d="M43 34L59 23L75 34L59 44Z" fill="${accent}" stroke="${stroke}"/>`;
- if(type==='foguang') art=`<path d="M18 103H142" ${line} stroke-width="2"/><path d="M27 98L35 70H125L133 98" fill="${soft}" stroke="${stroke}"/><path d="M28 70Q80 45 132 70" fill="${warm}" stroke="${stroke}"/><path d="M38 70V98M54 66V98M80 60V98M106 66V98M122 70V98" ${line} stroke-width="2"/>`;
- if(type==='zhuozheng') art=`<path d="M17 103Q38 88 58 96Q80 106 104 91Q124 80 143 91" fill="none" stroke="${green}" stroke-width="7" stroke-linecap="round"/><path d="M39 88V58Q39 52 46 50H64Q71 52 71 58V88" fill="${soft}" stroke="${stroke}"/><path d="M43 51Q55 38 67 51" ${line} stroke="${accent}" stroke-width="4"/><path d="M80 89V54M80 57Q92 49 101 57Q91 64 80 57M80 69Q94 61 104 69Q92 76 80 69" fill="${green}" stroke="${stroke}" stroke-width="1.2"/>`;
- if(type==='zhaozhou') art=`<path d="M17 104H143" ${line} stroke-width="2"/><path d="M23 97Q80 28 137 97" ${line} stroke-width="3"/><path d="M31 96Q80 48 129 96" ${line} stroke-width="2"/><path d="M40 89Q80 60 120 89" ${line} stroke="${accent}" stroke-width="4"/><path d="M25 98L135 98" ${line} stroke-width="2"/>`;
- if(type==='suzhoumuseum') art=`<path d="M20 101H140" ${line} stroke-width="2"/><path d="M31 92V59H74V92M86 92V50H129V92" fill="${soft}" stroke="${stroke}"/><path d="M31 59L53 40L74 59M86 50L108 32L129 50" fill="${accent}" fill-opacity=".65" stroke="${stroke}"/><path d="M53 40V92M108 32V92" ${line} stroke-width="1.7"/>`;
- if(type==='tulou') art=`<ellipse cx="80" cy="74" rx="48" ry="25" fill="${soft}" stroke="${stroke}" stroke-width="2"/><ellipse cx="80" cy="74" rx="25" ry="12" fill="#fff" stroke="${stroke}" stroke-width="1.7"/><path d="M32 74Q80 49 128 74M38 87Q80 61 122 87" ${line} stroke="${accent}" stroke-width="3"/><path d="M80 62V101" ${line} stroke-width="2"/>`;
- if(type==='yueyang') art=`<path d="M25 102H135" ${line} stroke-width="2"/><path d="M39 98V54H121V98" fill="${soft}" stroke="${stroke}"/><path d="M31 54H129L119 43H41Z" fill="${accent}" stroke="${stroke}"/><path d="M38 43H122L113 33H47Z" fill="${soft}" stroke="${stroke}"/><path d="M50 54V98M68 54V98M80 54V98M92 54V98M110 54V98" ${line} stroke-width="2"/>`;
- if(type==='yellowcrane') art=`<path d="M24 103H136" ${line} stroke-width="2"/><path d="M40 98V55H120V98" fill="${soft}" stroke="${stroke}"/><path d="M31 55H129L118 44H42Z" fill="${accent}" stroke="${stroke}"/><path d="M42 44H118L109 34H51Z" fill="${soft}" stroke="${stroke}"/><path d="M48 55V98M64 55V98M80 55V98M96 55V98M112 55V98" ${line} stroke-width="2"/>`;
- if(type==='savoye') art=`<path d="M18 102H142" ${line} stroke-width="2"/><rect x="28" y="58" width="104" height="43" rx="2" fill="${soft}" stroke="${stroke}" stroke-width="2"/><path d="M28 58Q80 43 132 58" ${line} stroke-width="2"/><path d="M38 58V101M54 58V101M70 58V101M86 58V101M102 58V101M118 58V101" stroke="${blue}" stroke-width="4"/><path d="M31 52H129" stroke="${accent}" stroke-width="5" stroke-linecap="round"/>`;
- if(type==='ronchamp') art=`<path d="M22 101Q30 62 54 58Q87 53 130 65L121 101Z" fill="${soft}" stroke="${stroke}" stroke-width="2"/><path d="M18 61Q52 45 94 57Q73 46 67 28Q42 30 18 61Z" fill="${accent}" stroke="${stroke}" stroke-width="2.3"/><circle cx="46" cy="70" r="4" fill="${blue}"/><circle cx="69" cy="60" r="3" fill="${blue}"/><circle cx="97" cy="75" r="4" fill="${blue}"/><path d="M20 103H132" ${line} stroke-width="2"/>`;
- if(type==='barcelona') art=`<path d="M19 102H141" ${line} stroke-width="2"/><path d="M29 57H126V102H29Z" fill="${soft}" stroke="${stroke}" stroke-width="2"/><path d="M29 57H119L103 69H48Z" fill="${accent}"/><path d="M48 69H103V102H48Z" fill="#fff" stroke="${stroke}"/><path d="M58 69V102M79 69V102M103 57V102" stroke="${blue}" stroke-width="3"/>`;
- if(type==='fallingwater') art=`<path d="M12 101Q34 80 57 86L78 67L139 77" fill="none" stroke="${green}" stroke-width="8" stroke-linecap="round"/><path d="M31 61H107L130 74H47Z" fill="${soft}" stroke="${stroke}" stroke-width="2"/><path d="M20 50H90L108 61H34Z" fill="${accent}" stroke="${stroke}" stroke-width="2"/><path d="M49 61V83M70 61V86M91 61V75" ${line} stroke-width="2"/>`;
- if(type==='sydney') art=`<path d="M17 102Q30 68 45 47Q59 27 74 49Q88 25 104 49Q121 71 137 102" fill="${soft}" stroke="${stroke}" stroke-width="2"/><path d="M24 100Q39 72 52 52Q64 36 75 53Q89 34 105 55Q119 72 130 100" ${line} stroke="${accent}" stroke-width="4"/><path d="M17 104H140" ${line} stroke-width="2"/>`;
- if(type==='guggenheim') art=`<path d="M22 102H138" ${line} stroke-width="2"/><path d="M43 91Q30 64 48 47Q67 29 103 38Q127 45 123 72Q120 95 96 98Q67 102 43 91Z" fill="${soft}" stroke="${stroke}" stroke-width="2.2"/><path d="M56 84Q44 64 60 51Q77 39 103 47" ${line} stroke="${accent}" stroke-width="5"/><path d="M71 45Q91 57 104 75" ${line} stroke-width="2"/>`;
- if(type==='farnsworth') art=`<path d="M18 102H142" ${line} stroke-width="2"/><rect x="30" y="52" width="100" height="48" fill="${soft}" fill-opacity=".55" stroke="${stroke}" stroke-width="2"/><path d="M24 52H136M24 61H136M45 52V100M79 52V100M113 52V100" ${line} stroke-width="1.8"/><path d="M37 46H123" stroke="${accent}" stroke-width="4"/>`;
- if(type==='pompidou') art=`<path d="M19 102H141" ${line} stroke-width="2"/><rect x="35" y="42" width="91" height="60" fill="${soft}" stroke="${stroke}" stroke-width="2"/><path d="M35 55H126M35 70H126M35 85H126" ${line} stroke-width="2"/><path d="M46 42V102M65 42V102M84 42V102M103 42V102M122 42V102" stroke="${blue}" stroke-width="3"/><path d="M27 48L35 48M126 63L136 63M27 78L35 78" stroke="${accent}" stroke-width="4"/>`;
- if(type==='seagram') art=`<path d="M23 102H137" ${line} stroke-width="2"/><rect x="45" y="28" width="50" height="74" fill="${soft}" stroke="${stroke}" stroke-width="2"/><path d="M51 28V102M63 28V102M76 28V102M88 28V102" stroke="${accent}" stroke-width="2"/><path d="M39 31H101" ${line} stroke-width="2"/>`;
- if(type==='salk') art=`<path d="M18 102H142" ${line} stroke-width="2"/><path d="M30 91V54H63V91M97 91V54H130V91" fill="${soft}" stroke="${stroke}" stroke-width="2"/><path d="M63 54H97V91H63Z" fill="#fff"/><path d="M80 48V98" stroke="${accent}" stroke-width="3"/><path d="M18 53H142" ${line} stroke-width="1.5"/>`;
- return `<svg viewBox="0 0 160 120" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><rect width="160" height="120" fill="#fff"/><g opacity=".28" stroke="#9aa1a8" stroke-width=".8"><path d="M9 13L28 9M117 18L151 12M11 112L31 108M126 108L151 112"/><path d="M15 30Q43 21 70 27M96 29Q124 21 147 26" stroke-dasharray="3 4"/></g>${art}${locked?'<circle cx="135" cy="19" r="10" fill="#fff" stroke="#dfe2e5"/><path d="M131 19a4 4 0 0 1 8 0v5h-8z" fill="#b4b8bd"/>':''}</svg>`;
-}
-function renderBadgeFocusCard(){const el=document.getElementById('badgeFocusCard');if(!el)return;const total=Math.max(0,Number(badgeProgress.totalFocusSeconds)||0),unlocked=badgeUnlockCount(),within=total%BADGE_SECONDS,progress=Math.min(100,within/BADGE_SECONDS*100),next=unlocked>=ARCH_BADGES.length?'已集齐 20 枚':`再专注 ${formatStudySeconds(Math.max(0,BADGE_SECONDS-within))}`;el.innerHTML=`<div class="badge-focus-head"><div><div class="badge-focus-title">◇ 建筑徽章</div><div class="badge-focus-sub">累计专注 7 小时，收下一座建筑。<br>现在已收集 <b>${unlocked}/20</b> 枚。</div></div><button class="btn btn-small btn-secondary" onclick="openBadgeLibraryTab()">徽章库</button></div><div class="badge-progress"><i style="width:${unlocked>=ARCH_BADGES.length?100:progress}%"></i></div><div class="badge-focus-meta"><span>累计专注 ${formatStudySeconds(total)}</span><span>${next}</span></div>`}
-function openBadgeLibraryTab(){const el=[...document.querySelectorAll('.tab-item')].find(x=>x.textContent.includes('徽章'));if(el)switchTab('badges',el)}
-function renderBadgeLibrary(){const grid=document.getElementById('badgeLibraryGrid');if(!grid)return;const unlocked=badgeUnlockCount();document.getElementById('badgeLibraryCount').textContent=`${unlocked} / ${ARCH_BADGES.length}`;grid.innerHTML=ARCH_BADGES.map((b,i)=>{const on=i<unlocked;return `<article class="arch-card ${on?'':'locked'}" onclick="openBadgeDetail(${b.id})"><div class="arch-no">NO.${String(b.id).padStart(2,'0')}</div><div class="arch-art">${archSvg(b.type,!on)}</div><div class="arch-name">${esc(b.name)}</div><div class="arch-meta">${esc(b.year)} · ${on?esc(b.architect==='—'?'中国古建':b.architect):'待解锁'}</div>${on?'':'<div class="arch-lock">⌑</div>'}</article>`}).join('')}
-function openBadgeDetail(id){const b=ARCH_BADGES.find(x=>x.id===id);if(!b)return;const unlocked=id<=badgeUnlockCount();if(!unlocked){const total=Math.max(0,Number(badgeProgress.totalFocusSeconds)||0),within=total%BADGE_SECONDS;alert(`还差 ${formatStudySeconds(Math.max(0,BADGE_SECONDS-within))}，即可获得下一枚徽章。`);return}document.getElementById('badgeDetailBody').innerHTML=`<div class="badge-detail-art">${archSvg(b.type,false)}</div><div class="badge-detail-info"><h3>${esc(b.name)}</h3><div class="year">${esc(b.year)}</div>${b.architect!=='—'?`<div class="architect">设计：${esc(b.architect)}</div>`:''}<div class="badge-detail-note">${esc(b.origin)} · 建筑徽章 No.${String(b.id).padStart(2,'0')}</div></div>`;document.getElementById('badgeDetailModal').classList.add('active')}
-function closeBadgeDetail(){document.getElementById('badgeDetailModal').classList.remove('active')}
-function clearAllData(){if(!confirm('确定清空全部筑习数据吗？'))return;Object.keys(localStorage).filter(k=>k.startsWith(KEY)).forEach(k=>localStorage.removeItem(k));tasks=[];englishErrors=[];vulnerabilities=[];moods={};coffees={};distracts={};familiarityHistory=[];studyTimeData={};badgeProgress={totalFocusSeconds:0,unlocked:0};activeTimerTaskId=null;stopTimerTicker();renderDashboard();renderEnglishErrors();renderVulnerabilities();renderRandom();renderFamiliarity();renderBadgeLibrary();closeModal();alert('已清空本设备上的筑习数据。')}
-
-function currentExportObject(){return {app:'筑习',version:4,exported_at:new Date().toISOString(),tasks,subjectTree,englishErrors,vulnerabilities,moods,coffees,distracts,familiarityHistory,studyTimeData,badgeProgress}}
+function currentExportObject(){return {app:'筑习',version:3,exported_at:new Date().toISOString(),tasks,subjectTree,englishErrors,vulnerabilities,moods,coffees,distracts,familiarityHistory,studyTimeData}}
 function exportDataJSON(){const text=JSON.stringify(currentExportObject(),null,2),filename='筑习备份_'+localDateString()+'.json';if(window.ZhuxiAndroid&&typeof window.ZhuxiAndroid.saveJson==='function'){try{window.ZhuxiAndroid.saveJson(btoa(unescape(encodeURIComponent(text))),filename);return}catch(e){}}const blob=new Blob([text],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)}
 function importDataJSON(){document.getElementById('importFileInput').click()}
-async function handleImportFile(ev){const f=ev.target.files?.[0];ev.target.value='';if(!f)return;try{const d=JSON.parse(await f.text());if(!d||!Array.isArray(d.tasks)||!d.subjectTree)throw new Error('备份文件格式不正确');if(!confirm('导入后将覆盖当前设备上的筑习数据，确定继续吗？'))return;tasks=d.tasks;subjectTree=d.subjectTree;englishErrors=Array.isArray(d.englishErrors)?d.englishErrors:[];vulnerabilities=Array.isArray(d.vulnerabilities)?d.vulnerabilities:[];moods=d.moods||{};coffees=d.coffees||{};distracts=d.distracts||{};familiarityHistory=Array.isArray(d.familiarityHistory)?d.familiarityHistory:[];studyTimeData=d.studyTimeData&&typeof d.studyTimeData==='object'?d.studyTimeData:{};badgeProgress=d.badgeProgress&&typeof d.badgeProgress==='object'?d.badgeProgress:{totalFocusSeconds:Object.values(studyTimeData).reduce((a,e)=>a+(Number(e?.total)||0),0),unlocked:0};badgeProgress.unlocked=badgeUnlockCount();normalizeTaskData();['tasks','tree','english_errors','vulnerabilities','moods','coffees','distracts','familiarity_history','study_time','badge_progress'].forEach(k=>localStorage.removeItem(KEY+k));saveData('tasks',tasks);saveData('tree',subjectTree);saveData('english_errors',englishErrors);saveData('vulnerabilities',vulnerabilities);saveData('moods',moods);saveData('coffees',coffees);saveData('distracts',distracts);saveData('familiarity_history',familiarityHistory);saveData('study_time',studyTimeData);saveData('badge_progress',badgeProgress);await writeSnapshotToIDB();applyTimeBackground();renderDashboard();renderEnglishErrors();renderVulnerabilities();renderRandom();renderFamiliarity();renderBadgeLibrary();renderWeeklySummary();renderMonthlySummary();alert('恢复成功。')}catch(e){alert('导入失败：'+e.message)}}
+async function handleImportFile(ev){const f=ev.target.files?.[0];ev.target.value='';if(!f)return;try{const d=JSON.parse(await f.text());if(!d||!Array.isArray(d.tasks)||!d.subjectTree)throw new Error('备份文件格式不正确');if(!confirm('导入后将覆盖当前设备上的筑习数据，确定继续吗？'))return;tasks=d.tasks;subjectTree=d.subjectTree;englishErrors=Array.isArray(d.englishErrors)?d.englishErrors:[];vulnerabilities=Array.isArray(d.vulnerabilities)?d.vulnerabilities:[];moods=d.moods||{};coffees=d.coffees||{};distracts=d.distracts||{};familiarityHistory=Array.isArray(d.familiarityHistory)?d.familiarityHistory:[];studyTimeData=d.studyTimeData&&typeof d.studyTimeData==='object'?d.studyTimeData:{};normalizeTaskData();['tasks','tree','english_errors','vulnerabilities','moods','coffees','distracts','familiarity_history','study_time'].forEach(k=>localStorage.removeItem(KEY+k));saveData('tasks',tasks);saveData('tree',subjectTree);saveData('english_errors',englishErrors);saveData('vulnerabilities',vulnerabilities);saveData('moods',moods);saveData('coffees',coffees);saveData('distracts',distracts);saveData('familiarity_history',familiarityHistory);saveData('study_time',studyTimeData);await writeSnapshotToIDB();applyTimeBackground();renderDashboard();renderEnglishErrors();renderVulnerabilities();renderRandom();renderFamiliarity();renderWeeklySummary();renderMonthlySummary();alert('恢复成功。')}catch(e){alert('导入失败：'+e.message)}}
 function openDataManager(){const body=`<div style="line-height:1.7;font-size:13px"><b>本地数据</b><br>学习记录会自动保存在当前设备，不需要登录。<br><span class="muted">数据库：IndexedDB（浏览器/App 本地）</span></div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px"><button class="btn" onclick="exportDataJSON();closeModal()">📤 导出备份</button><button class="btn btn-secondary" onclick="importDataJSON();closeModal()">📥 导入恢复</button></div><div class="muted" style="margin-top:12px;font-size:11px;line-height:1.6">建议在换手机、清理浏览器数据或重大版本更新前导出一次备份。</div>`;document.getElementById('genericTitle').textContent='💾 数据与备份';document.getElementById('genericBody').innerHTML=body;document.getElementById('genericModal').classList.add('active')}
 function openSystemSettings(){const body=`<p class="muted" style="margin-bottom:12px">本版本不需要登录。所有学习记录自动保存在本设备；建议定期备份，换手机时可导出恢复。</p><button class="btn btn-secondary" onclick="alert('⏰ 20:00 晚间提醒测试成功！')" style="margin-bottom:10px">🔔 测试 20:00 晚间提醒</button><button class="btn btn-secondary" onclick="closeModal();openDataManager()" style="margin-bottom:10px">💾 数据与备份</button><button class="btn btn-secondary" onclick="closeModal();clearAllData()" style="color:#FF3B30">🗑️ 清空所有数据</button>`;document.getElementById('genericTitle').textContent='⚙ 系统设置';document.getElementById('genericBody').innerHTML=body;document.getElementById('genericModal').classList.add('active')}
 
@@ -792,7 +762,6 @@ window.addEventListener('appinstalled',()=>{deferredInstallPrompt=null});
     renderVulnerabilities();
     renderRandom();
     renderFamiliarity();
-    renderBadgeLibrary();
     renderWeeklySummary();
     renderMonthlySummary();
     startDateWatcher();
@@ -806,19 +775,6 @@ window.addEventListener('appinstalled',()=>{deferredInstallPrompt=null});
   }
 })();
 </script>
-
-
-<div id="focusMode" aria-hidden="true">
-  <div class="focus-controls">
-    <button class="focus-circle pause" aria-label="暂停计时" onclick="pauseFocusMode()">Ⅱ</button>
-    <button class="focus-circle" aria-label="退出专注" onclick="exitFocusMode()">×</button>
-  </div>
-  <div class="focus-center">
-    <img class="focus-art" src="./focus-mushroom.gif" alt="雨中的蘑菇专注动画" decoding="async">
-    <div class="focus-caption">专注中…</div>
-    <div class="focus-dots">···</div>
-  </div>
-</div>
 
 </body>
 </html>
