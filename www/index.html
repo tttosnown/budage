@@ -113,46 +113,32 @@ button{touch-action:manipulation;-webkit-tap-highlight-color:transparent}button:
 
 .daily-time-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.daily-time-item{background:#F7F4F8;border-radius:10px;padding:11px}.daily-time-subject{font-size:11px;color:var(--sub);margin-bottom:4px}.daily-total{margin-top:10px;padding:11px;border-radius:10px;background:#EEE8F2;text-align:center}.time-chart-title{font-size:12px;font-weight:600;margin:12px 0 8px}.time-bars{display:flex;align-items:flex-end;justify-content:space-between;gap:7px;height:140px;padding:0 4px}.time-bar-col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:4px;font-size:9px}.time-bar{width:100%;max-width:30px;background:#111;border-radius:5px 5px 2px 2px;min-height:4px}.time-bar-col small{font-size:10px;color:var(--sub)}.weekly-time-meta{text-align:center;font-size:12px;margin-top:8px;padding:9px;background:#F7F4F8;border-radius:8px}
 
-/* ===== 专注模式：雨中手绘蘑菇场景 ===== */
-#focusMode{position:fixed;inset:0;z-index:99990;background:#f7f4ec;color:#3f3b36;display:none;overflow:hidden;touch-action:none}
-#focusMode.active{display:block}
-#focusMode .focus-actions{position:absolute;top:max(22px,env(safe-area-inset-top));right:max(18px,env(safe-area-inset-right));display:flex;gap:12px;z-index:5}
-#focusMode .focus-btn{width:48px;height:48px;border:1px solid rgba(63,59,54,.55);border-radius:50%;background:rgba(250,248,242,.84);color:#3f3b36;font-size:23px;line-height:1;display:flex;align-items:center;justify-content:center;padding:0;box-shadow:none;backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}
-#focusMode .focus-btn:active{transform:scale(.96);opacity:.75}
-#focusMode .focus-scene{position:absolute;left:50%;top:47%;width:min(92vw,560px);height:min(68vh,520px);transform:translate(-50%,-50%)}
-#focusMode .focus-caption{position:absolute;left:50%;bottom:max(7vh,54px);transform:translateX(-50%);text-align:center;font-family:ui-rounded,"PingFang SC","Noto Sans SC",sans-serif;color:#4d4943;letter-spacing:2px;font-size:16px;white-space:nowrap}
-#focusMode .focus-caption .dots{display:block;margin-top:7px;letter-spacing:7px;font-size:13px}
-#focusMode svg{width:100%;height:100%;overflow:visible}
-#focusMode .paper-grain{opacity:.12;mix-blend-mode:multiply}
-#focusMode .rain{stroke:#7c9eac;stroke-width:2.2;stroke-linecap:round;opacity:.58}
-#focusMode .rain.r2{opacity:.35;stroke-width:1.6}
-#focusMode .rain-drop{animation:focusRain 1.8s linear infinite}
-#focusMode .rain-drop:nth-child(2n){animation-duration:2.15s;animation-delay:-.7s}
-#focusMode .rain-drop:nth-child(3n){animation-duration:1.55s;animation-delay:-1.1s}
-#focusMode .rain-drop:nth-child(4n){animation-duration:2.45s;animation-delay:-1.6s}
-#focusMode .mushroom{transform-box:fill-box;transform-origin:center bottom}
-#focusMode .m-left{animation:mushroomSway 3.7s ease-in-out infinite}
-#focusMode .m-small{animation:mushroomSway 4.4s ease-in-out -.8s infinite}
-#focusMode .m-center{animation:mushroomSway 4.8s ease-in-out -.3s infinite}
-#focusMode .m-right{animation:mushroomSway 4.1s ease-in-out -1.4s infinite}
-#focusMode .cap{transform-box:fill-box;transform-origin:center bottom;animation:capBreath 4.8s ease-in-out infinite}
-#focusMode .mushroom-face{animation:faceBob 4.8s ease-in-out infinite}
-#focusMode .eye{transform-box:fill-box;transform-origin:center;animation:blink 5.7s ease-in-out infinite}
-#focusMode .eye:nth-child(2){animation-delay:.08s}
-#focusMode .grass{transform-box:fill-box;transform-origin:bottom center;animation:grassMove 3.2s ease-in-out infinite}
-#focusMode .ripple{fill:none;stroke:#84a8b0;stroke-linecap:round;animation:ripple 2.7s ease-out infinite}
-#focusMode .ripple.r1{animation-delay:-.9s}
-#focusMode .ripple.r2{animation-delay:-1.8s}
-#focusMode .ripple.r3{animation-delay:-.25s}
-#focusMode .puddle-fill{fill:#c7dadd;opacity:.28}
-@keyframes focusRain{0%{transform:translate3d(0,-32px,0);opacity:0}12%{opacity:.52}82%{opacity:.52}100%{transform:translate3d(-9px,92px,0);opacity:0}}
-@keyframes mushroomSway{0%,100%{transform:rotate(-1deg) translateY(0)}50%{transform:rotate(1.25deg) translateY(-2px)}}
-@keyframes capBreath{0%,100%{transform:rotate(-.7deg) scale(1)}50%{transform:rotate(.9deg) scale(1.018)}}
-@keyframes faceBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-1.5px)}}
-@keyframes blink{0%,43%,48%,100%{transform:scaleY(1)}45%,47%{transform:scaleY(.08)}}
-@keyframes grassMove{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(3deg)}}
-@keyframes ripple{0%{transform:scale(.35);opacity:0}18%{opacity:.52}100%{transform:scale(1.7);opacity:0}}
-@media (prefers-reduced-motion:reduce){#focusMode *{animation:none!important}}
+/* Mushroom focus mode */
+.focus-overlay{display:none;position:fixed;inset:0;z-index:5000;background:#f5f1e9;color:#5d5953;overflow:hidden;padding-top:env(safe-area-inset-top,0px)}
+.focus-overlay.active{display:block}
+.focus-top{position:absolute;left:0;right:0;top:calc(env(safe-area-inset-top,0px) + 12px);height:64px;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:0 18px}
+.focus-exit{border:0;background:transparent;width:54px;height:54px;position:relative;opacity:.9;cursor:pointer}
+.focus-exit:before,.focus-exit:after{content:"";position:absolute;left:11px;right:11px;top:26px;height:2.5px;background:#5c5954;border-radius:2px;transform:rotate(45deg)}
+.focus-exit:after{transform:rotate(-45deg)}
+.focus-controls{display:flex;gap:14px}.focus-round{width:58px;height:58px;border:1.6px solid #5c5954;border-radius:50%;background:rgba(248,245,238,.35);display:flex;align-items:center;justify-content:center;color:#5c5954;cursor:pointer;backdrop-filter:blur(2px)}
+.focus-pause-icon{font-size:25px;letter-spacing:3px;line-height:1;margin-left:3px}.focus-close-icon{font-size:33px;font-weight:300;line-height:1;margin-top:-3px}
+.focus-scene-wrap{position:absolute;left:50%;top:48%;width:min(92vw,760px);transform:translate(-50%,-50%)}
+.focus-scene{position:relative;width:100%;aspect-ratio:792/745}.focus-scene-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block}
+.focus-character{position:absolute;display:block;transform-origin:50% 92%;pointer-events:none;will-change:transform;filter:none}
+.focus-big{left:36.87%;top:33.83%;width:25.13%;height:53.69%;object-fit:contain}.focus-red{left:13.64%;top:55.70%;width:16.67%;height:29.80%;object-fit:contain}.focus-gray{left:29.55%;top:70.60%;width:9.47%;height:14.50%;object-fit:contain}.focus-yellow{left:63.51%;top:61.61%;width:9.60%;height:23.49%;object-fit:contain}
+.focus-overlay.live .focus-big{animation:focusBigBreath 4.8s ease-in-out infinite}.focus-overlay.live .focus-red{animation:focusRedSway 5.8s ease-in-out infinite}.focus-overlay.live .focus-gray{animation:focusGrayBreath 4.1s ease-in-out infinite}.focus-overlay.live .focus-yellow{animation:focusYellowSway 5.2s ease-in-out infinite}
+@keyframes focusBigBreath{0%,100%{transform:translateY(0) rotate(-.35deg) scale(1)}50%{transform:translateY(-2px) rotate(.35deg) scale(1.006)}}
+@keyframes focusRedSway{0%,100%{transform:rotate(-.35deg) translateY(0)}50%{transform:rotate(.55deg) translateY(-1px)}}
+@keyframes focusGrayBreath{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-1.5px) scale(1.012)}}
+@keyframes focusYellowSway{0%,100%{transform:rotate(.3deg) translateY(0)}50%{transform:rotate(-.8deg) translateY(-1px)}}
+.focus-rain{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:5}.focus-drop{position:absolute;width:1.6px;height:13px;background:rgba(128,159,175,.40);border-radius:50%;transform:rotate(18deg);animation:focusRain linear infinite}.focus-ripple{position:absolute;width:8px;height:5px;border:1.3px solid rgba(116,153,171,.58);border-radius:50%;pointer-events:none;z-index:8;animation:focusRipple .85s ease-out forwards}.focus-tap{position:absolute;z-index:9;pointer-events:none;font:14px/1 serif;color:rgba(91,88,82,.72);animation:focusTap .8s ease-out forwards;transform:translate(-50%,-50%)}
+@keyframes focusRain{from{transform:translateY(-35px) rotate(18deg);opacity:0}12%{opacity:.65}to{transform:translateY(800px) rotate(18deg);opacity:0}}
+@keyframes focusRipple{from{transform:scale(.5);opacity:.8}to{transform:scale(7);opacity:0}}
+@keyframes focusTap{0%{opacity:0;transform:translate(-50%,-20%)}20%{opacity:.75}100%{opacity:0;transform:translate(-50%,-95%)}}
+.focus-bottom{position:absolute;left:0;right:0;bottom:calc(5% + env(safe-area-inset-bottom,0px));text-align:center;z-index:10;font:18px/1.55 serif;color:#706a62;letter-spacing:1px}.focus-bottom small{display:block;font-size:15px;letter-spacing:5px;margin-top:2px}
+.focus-pulse{position:absolute;inset:-3%;border-radius:50%;pointer-events:none;opacity:0}.focus-pulse.show{animation:focusPulse .5s ease-out}.focus-character.hit{animation:none}.focus-overlay.paused .focus-character,.focus-overlay.paused .focus-drop{animation-play-state:paused}.focus-overlay.paused .focus-scene-bg{filter:saturate(.96)}
+@keyframes focusPulse{0%{opacity:.24;box-shadow:0 0 0 0 rgba(110,103,94,.15)}100%{opacity:0;box-shadow:0 0 0 22px rgba(110,103,94,0)}}
+@media(max-height:700px){.focus-scene-wrap{top:50%;width:min(88vw,620px)}.focus-top{transform:scale(.9);transform-origin:top right}.focus-bottom{bottom:3%}}
 </style>
 </head>
 <body>
@@ -205,100 +191,6 @@ button{touch-action:manipulation;-webkit-tap-highlight-color:transparent}button:
 </section>
 </div>
 
-<div id="focusMode" aria-label="专注模式">
-  <div class="focus-actions">
-    <button class="focus-btn" aria-label="暂停计时" onclick="toggleFocusPause()">Ⅱ</button>
-    <button class="focus-btn" aria-label="退出专注" onclick="exitFocusMode()">×</button>
-  </div>
-  <div class="focus-scene" aria-hidden="true">
-    <svg viewBox="0 0 560 520" role="img">
-      <defs>
-        <filter id="focusPaperNoise" x="-10%" y="-10%" width="120%" height="120%">
-          <feTurbulence type="fractalNoise" baseFrequency=".75" numOctaves="2" seed="17"/>
-          <feColorMatrix values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 .16 0"/>
-        </filter>
-      </defs>
-      <rect class="paper-grain" x="0" y="0" width="560" height="520" filter="url(#focusPaperNoise)"/>
-
-      <!-- 雨：疏密不一，向左下轻微倾斜 -->
-      <g class="rain">
-        <g class="rain-drop"><path d="M88 70l-8 25"/></g><g class="rain-drop"><path d="M160 22l-7 23"/></g>
-        <g class="rain-drop"><path d="M240 82l-7 23"/></g><g class="rain-drop"><path d="M318 36l-8 26"/></g>
-        <g class="rain-drop"><path d="M394 86l-7 24"/></g><g class="rain-drop"><path d="M470 40l-8 26"/></g>
-        <g class="rain-drop"><path d="M126 155l-7 23"/></g><g class="rain-drop"><path d="M205 128l-7 24"/></g>
-        <g class="rain-drop"><path d="M283 172l-8 25"/></g><g class="rain-drop"><path d="M366 142l-7 23"/></g>
-        <g class="rain-drop"><path d="M447 170l-8 25"/></g><g class="rain-drop"><path d="M505 130l-7 23"/></g>
-        <g class="rain r2"><path d="M55 220l-6 19"/><path d="M174 224l-6 20"/><path d="M337 232l-6 19"/><path d="M484 226l-6 19"/></g>
-      </g>
-
-      <!-- 地面与水洼 -->
-      <g>
-        <ellipse class="puddle-fill" cx="279" cy="406" rx="188" ry="29"/>
-        <ellipse class="ripple r1" cx="191" cy="399" rx="38" ry="8" stroke-width="2"/>
-        <ellipse class="ripple r2" cx="284" cy="411" rx="51" ry="11" stroke-width="2"/>
-        <ellipse class="ripple r3" cx="389" cy="402" rx="37" ry="8" stroke-width="2"/>
-        <path d="M83 407q18-8 35 0M122 416q15-7 29 0M425 419q19-8 38 0M454 406q13-6 27 0" fill="none" stroke="#8aa9ad" stroke-width="2" stroke-linecap="round" opacity=".55"/>
-      </g>
-
-      <!-- 草 -->
-      <g class="grass" fill="none" stroke="#7c9a76" stroke-width="2" stroke-linecap="round" opacity=".7">
-        <path d="M112 402q-3-17 2-27M113 401q7-15 15-21M101 405q-2-12-9-18"/>
-        <path d="M438 405q-2-16 3-25M441 405q7-15 16-20M428 406q-3-10-10-16"/>
-        <path d="M337 405q-1-10 4-17M341 405q6-11 12-14"/>
-      </g>
-
-      <!-- 左侧原创小蘑菇 -->
-      <g class="mushroom m-left" stroke="#514941" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M112 390q-2-48 6-77q9-9 22 0q7 31 7 77q-15 12-35 0z" fill="#f4e8d9"/>
-        <path class="cap" d="M91 315q4-37 36-43q34 3 43 43q-34 18-79 0z" fill="#d28d79"/>
-        <path d="M101 309q12 8 25 9M118 281q2 10 0 21M139 281q4 9 8 18" fill="none" opacity=".45"/>
-        <circle cx="116" cy="327" r="3.1" fill="#514941" stroke="none"/><circle cx="135" cy="327" r="3.1" fill="#514941" stroke="none"/>
-        <path d="M121 337q5 4 10 0" fill="none" stroke-width="2"/>
-        <path d="M96 392q-3 7-2 13M145 392q3 7 2 13" fill="none" opacity=".55"/>
-      </g>
-
-      <!-- 中左矮蘑菇 -->
-      <g class="mushroom m-small" stroke="#514941" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M218 398q0-37 8-52q8-7 16 0q8 20 7 52q-15 8-31 0z" fill="#eee2d5"/>
-        <path class="cap" d="M205 347q4-25 26-28q23 2 29 28q-28 12-55 0z" fill="#9b9991"/>
-        <path d="M214 339q9 5 17 6M231 322v21M242 324q4 7 7 13" fill="none" opacity=".48"/>
-        <circle cx="222" cy="360" r="2.5" fill="#514941" stroke="none"/><circle cx="237" cy="360" r="2.5" fill="#514941" stroke="none"/>
-        <path d="M224 370q5 3 9 0" fill="none" stroke-width="1.8"/>
-      </g>
-
-      <!-- 中央高蘑菇：主要角色 -->
-      <g class="mushroom m-center" stroke="#514941" stroke-width="3.1" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M273 400q-1-73 7-150q10-16 28-1q10 79 8 151q-18 15-43 0z" fill="#f0e4d6"/>
-        <path class="cap" d="M249 249q9-38 45-43q40 3 55 43q-46 22-100 0z" fill="#b98565"/>
-        <path d="M263 239q12 7 26 9M283 215q1 13-1 28M307 215q5 12 13 23M328 224q-3 9-2 17" fill="none" opacity=".5"/>
-        <g class="mushroom-face" fill="none">
-          <path class="eye" d="M282 274q4 5 8 0"/>
-          <path class="eye" d="M303 274q4 5 8 0"/>
-          <path d="M291 286q5 4 10 0" stroke-width="2.1"/>
-          <circle cx="291" cy="306" r="4" fill="#d8b5a2" stroke="none" opacity=".65"/>
-          <circle cx="307" cy="306" r="4" fill="#d8b5a2" stroke="none" opacity=".65"/>
-        </g>
-        <path d="M271 397q-5 8-3 15M315 397q5 8 3 15" fill="none" opacity=".55"/>
-        <path d="M257 266q-10 3-13 13M326 266q10 4 13 14" fill="none" opacity=".55"/>
-      </g>
-
-      <!-- 右侧小蘑菇 -->
-      <g class="mushroom m-right" stroke="#514941" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M380 401q-1-47 7-68q8-8 18 0q7 30 7 68q-16 10-32 0z" fill="#efe2d4"/>
-        <path class="cap" d="M365 333q5-29 26-34q25 3 32 34q-29 14-58 0z" fill="#d3a35d"/>
-        <path d="M374 325q9 5 18 7M390 306q2 10 0 21M405 308q3 7 7 13" fill="none" opacity=".45"/>
-        <circle cx="380" cy="345" r="2.6" fill="#514941" stroke="none"/><circle cx="395" cy="345" r="2.6" fill="#514941" stroke="none"/>
-        <path d="M382 355q5 3 9 0" fill="none" stroke-width="1.8"/>
-      </g>
-
-      <!-- 小雨滴落地 -->
-      <g fill="none" stroke="#7fa4ad" stroke-width="1.8" stroke-linecap="round" opacity=".48">
-        <path d="M157 397q0 7-5 10"/><path d="M248 407q0 7-5 10"/><path d="M355 397q0 7-5 10"/><path d="M417 390q0 7-5 10"/>
-      </g>
-    </svg>
-  </div>
-  <div class="focus-caption">专注中...<span class="dots">· · ·</span></div>
-</div>
 <div id="genericModal" class="modal"><div class="modal-content"><h2 id="genericTitle" style="margin-bottom:10px"></h2><div id="genericBody"></div><button class="btn btn-secondary" onclick="closeModal()" style="margin-top:15px">关闭</button></div></div><input id="importFileInput" type="file" accept="application/json,.json" style="display:none" onchange="handleImportFile(event)">
 
 <div id="englishModal" class="modal"><div class="modal-content"><h2 id="englishModalTitle">A 记录英语错误</h2><label class="muted">① 错误类型：</label><select id="errType"><option>选项辨析</option><option>细节定位</option><option>词义/熟词僻义</option><option>长难句理解</option><option>逻辑判断</option><option>粗心/误读</option><option>其他</option></select><label class="muted">② 错误次数：</label><input id="errCount" type="number" min="1" max="999" step="1" value="1" inputmode="numeric"><label class="muted">③ 为什么错？</label><textarea id="errReason" rows="3"></textarea><label class="muted">④ 下次提醒：</label><input id="errTip"><div style="display:flex;gap:10px"><button class="btn" onclick="saveEnglishError()">保存</button><button class="btn btn-secondary" onclick="closeEnglishModal()">取消</button></div></div></div>
@@ -539,19 +431,15 @@ function startTaskTimer(id){
   const t=tasks.find(x=>String(x.id)===String(id));if(!t)return;
   if(activeTimerTaskId!=null&&String(activeTimerTaskId)!==String(id))pauseTaskTimer(activeTimerTaskId);
   const key=String(id),e=studyTimeData[key]||{total:0,running:false,startedAt:null,date:t.date||todayStr};
-  if(e.running){openFocusMode();return;}
-  e.running=true;e.startedAt=Date.now();e.date=t.date||todayStr;studyTimeData[key]=e;activeTimerTaskId=id;activeTimerStartedAt=e.startedAt;saveStudyTime();startTimerTicker();renderDashboard();openFocusMode();
+  if(e.running)return;
+  e.running=true;e.startedAt=Date.now();e.date=t.date||todayStr;studyTimeData[key]=e;activeTimerTaskId=id;activeTimerStartedAt=e.startedAt;saveStudyTime();startTimerTicker();renderDashboard();
 }
 function accrueTaskTimer(id){const e=studyTimeData[String(id)];if(!e?.running||!e.startedAt)return 0;const now=Date.now(),delta=Math.max(0,Math.floor((now-e.startedAt)/1000));if(delta>0){e.total=(Number(e.total)||0)+delta;e.startedAt=now;studyTimeData[String(id)]=e;saveStudyTime()}return delta}
-function pauseTaskTimer(id){const key=String(id),e=studyTimeData[key];if(!e?.running)return;accrueTaskTimer(id);e.running=false;e.startedAt=null;studyTimeData[key]=e;if(String(activeTimerTaskId)===key){activeTimerTaskId=null;activeTimerStartedAt=0;stopTimerTicker()}saveStudyTime();renderDashboard();closeFocusMode()}
-function resetTaskTimer(id){const key=String(id);if(String(activeTimerTaskId)===key){const e=studyTimeData[key];if(e?.running){e.running=false;e.startedAt=null}activeTimerTaskId=null;stopTimerTicker()}studyTimeData[key]={total:0,running:false,startedAt:null,date:tasks.find(t=>String(t.id)===key)?.date||todayStr};saveStudyTime();renderDashboard();closeFocusMode()}
+function pauseTaskTimer(id){const key=String(id),e=studyTimeData[key];if(!e?.running)return;accrueTaskTimer(id);e.running=false;e.startedAt=null;studyTimeData[key]=e;if(String(activeTimerTaskId)===key){activeTimerTaskId=null;activeTimerStartedAt=0;stopTimerTicker()}saveStudyTime();renderDashboard()}
+function resetTaskTimer(id){const key=String(id);if(String(activeTimerTaskId)===key){const e=studyTimeData[key];if(e?.running){e.running=false;e.startedAt=null}activeTimerTaskId=null;stopTimerTicker()}studyTimeData[key]={total:0,running:false,startedAt:null,date:tasks.find(t=>String(t.id)===key)?.date||todayStr};saveStudyTime();renderDashboard()}
 function toggleTaskTimer(id){const e=studyTimeData[String(id)];if(e?.running)pauseTaskTimer(id);else startTaskTimer(id)}
 function startTimerTicker(){if(timerTickHandle)return;timerTickHandle=setInterval(()=>{if(activeTimerTaskId==null)return;const e=studyTimeData[String(activeTimerTaskId)];if(!e?.running){stopTimerTicker();return}renderTaskTimersOnly();},1000)}
 function stopTimerTicker(){if(timerTickHandle){clearInterval(timerTickHandle);timerTickHandle=null}}
-function openFocusMode(){const el=document.getElementById('focusMode');if(!el)return;el.classList.add('active');document.body.classList.add('focus-active')}
-function closeFocusMode(){const el=document.getElementById('focusMode');if(!el)return;el.classList.remove('active');document.body.classList.remove('focus-active')}
-function toggleFocusPause(){if(activeTimerTaskId==null)return;const e=studyTimeData[String(activeTimerTaskId)];if(e?.running)pauseTaskTimer(activeTimerTaskId);else if(e){startTaskTimer(activeTimerTaskId)}}
-function exitFocusMode(){if(activeTimerTaskId!=null){pauseTaskTimer(activeTimerTaskId)}else{closeFocusMode()}}
 function renderTaskTimersOnly(){document.querySelectorAll('[data-task-timer]').forEach(el=>{const id=el.dataset.taskTimer,e=studyTimeData[String(id)]||{},live=(e.running&&e.startedAt)?Math.floor((Date.now()-e.startedAt)/1000):0;const total=(Number(e.total)||0)+live;el.querySelector('.timer-time')?.replaceChildren(document.createTextNode(formatStudySeconds(total)));const b=el.querySelector('.timer-main');if(b)b.textContent=e.running?'暂停':'开始';})}
 function toggleTask(id){
   const t=tasks.find(x=>String(x.id)===String(id));
@@ -810,7 +698,7 @@ window.addEventListener('appinstalled',()=>{deferredInstallPrompt=null});
         activeTimerTaskId=Number(running[0]);
         activeTimerStartedAt=running[1].startedAt;
         startTimerTicker();
-        openFocusMode();
+        setTimeout(()=>window.openFocusMode?.(activeTimerTaskId),250);
       }
     }
     todayStr=localDateString();
@@ -833,6 +721,106 @@ window.addEventListener('appinstalled',()=>{deferredInstallPrompt=null});
   }finally{
     hideSplash();
   }
+})();
+</script>
+
+
+<div id="focusOverlay" class="focus-overlay" aria-hidden="true">
+  <div class="focus-top">
+    <button class="focus-exit" aria-label="退出专注" onclick="exitFocusMode()"></button>
+    <div class="focus-controls">
+      <button id="focusPauseBtn" class="focus-round" aria-label="暂停" onclick="toggleFocusPause()"><span class="focus-pause-icon">Ⅱ</span></button>
+      <button class="focus-round" aria-label="结束并退出" onclick="exitFocusMode()"><span class="focus-close-icon">×</span></button>
+    </div>
+  </div>
+  <div class="focus-scene-wrap">
+    <div id="focusScene" class="focus-scene">
+      <img class="focus-scene-bg" src="./mushroom/scene.png" alt="">
+      <div id="focusRain" class="focus-rain"></div>
+      <img id="focusBig" class="focus-character focus-big" src="./mushroom/big.png" alt="">
+      <img id="focusRed" class="focus-character focus-red" src="./mushroom/red.png" alt="">
+      <img id="focusGray" class="focus-character focus-gray" src="./mushroom/gray.png" alt="">
+      <img id="focusYellow" class="focus-character focus-yellow" src="./mushroom/yellow.png" alt="">
+      <div id="focusPulse" class="focus-pulse"></div>
+    </div>
+  </div>
+  <div class="focus-bottom">专注中...<small>···</small></div>
+</div>
+<script>
+(function(){
+  let focusRainReady=false, focusPaused=false, focusBound=false, focusTaskId=null;
+  function buildFocusRain(){
+    if(focusRainReady)return; focusRainReady=true;
+    const box=document.getElementById('focusRain'); if(!box)return;
+    for(let i=0;i<24;i++){
+      const d=document.createElement('i'); d.className='focus-drop';
+      d.style.left=(8+Math.random()*84)+'%';
+      d.style.top=(-20-Math.random()*80)+'px';
+      d.style.animationDuration=(2.6+Math.random()*2.2)+'s';
+      d.style.animationDelay=(-Math.random()*4.5)+'s';
+      box.appendChild(d);
+    }
+  }
+  function focusTapFeedback(kind,x,y){
+    const scene=document.getElementById('focusScene'); if(!scene)return;
+    const r=document.createElement('i'); r.className='focus-ripple'; r.style.left=x+'px'; r.style.top=y+'px'; scene.appendChild(r);
+    const t=document.createElement('span'); t.className='focus-tap'; t.textContent=kind==='big'?'…':kind==='red'?'☁':kind==='gray'?'…':'♪'; t.style.left=x+'px'; t.style.top=(y-6)+'px'; scene.appendChild(t);
+    setTimeout(()=>{r.remove();t.remove()},900);
+    const p=document.getElementById('focusPulse'); if(p){p.classList.remove('show');void p.offsetWidth;p.classList.add('show')}
+  }
+  function bindFocusCharacters(){
+    if(focusBound)return; focusBound=true;
+    const map=[['focusBig','big'],['focusRed','red'],['focusGray','gray'],['focusYellow','yellow']];
+    map.forEach(([id,kind])=>{
+      const el=document.getElementById(id); if(!el)return;
+      el.style.pointerEvents='auto'; el.style.cursor='pointer';
+      el.addEventListener('click',e=>{
+        e.stopPropagation();
+        const scene=document.getElementById('focusScene').getBoundingClientRect();
+        focusTapFeedback(kind,e.clientX-scene.left,e.clientY-scene.top);
+        el.classList.remove('hit'); void el.offsetWidth; el.classList.add('hit');
+        const anim={big:'focusBigBreath .72s ease-in-out 1',red:'focusRedSway .68s ease-in-out 1',gray:'focusGrayBreath .58s ease-in-out 1',yellow:'focusYellowSway .66s ease-in-out 1'}[kind];
+        if(!focusPaused){el.style.animation=anim;setTimeout(()=>{el.style.animation=''},760)}
+      });
+    });
+  }
+  window.openFocusMode=function(taskId){
+    focusTaskId=taskId;
+    const overlay=document.getElementById('focusOverlay'); if(!overlay)return;
+    buildFocusRain();bindFocusCharacters();focusPaused=false;
+    overlay.classList.add('active','live'); overlay.classList.remove('paused'); overlay.setAttribute('aria-hidden','false');
+    const b=document.getElementById('focusPauseBtn'); if(b)b.innerHTML='<span class="focus-pause-icon">Ⅱ</span>';
+    document.body.style.overflow='hidden';
+  };
+  window.toggleFocusPause=function(){
+    if(focusTaskId==null)return;
+    if(focusPaused){
+      startTaskTimer(focusTaskId);focusPaused=false;
+    }else{
+      pauseTaskTimer(activeTimerTaskId);focusPaused=true;
+    }
+    const o=document.getElementById('focusOverlay'),b=document.getElementById('focusPauseBtn');
+    if(o)o.classList.toggle('paused',focusPaused);
+    if(b)b.innerHTML=focusPaused?'<span class="focus-pause-icon">▶</span>':'<span class="focus-pause-icon">Ⅱ</span>';
+  };
+  window.exitFocusMode=function(){
+    if(focusTaskId!=null)pauseTaskTimer(focusTaskId);
+    focusTaskId=null;
+    const o=document.getElementById('focusOverlay'); if(o){o.classList.remove('active','live','paused');o.setAttribute('aria-hidden','true')}
+    document.body.style.overflow='';
+  };
+  const oldStart=window.startTaskTimer;
+  window.startTaskTimer=function(id){
+    oldStart(id);
+    setTimeout(()=>{if(studyTimeData[String(id)]?.running)window.openFocusMode(id)},30);
+  };
+  const oldPause=window.pauseTaskTimer;
+  window.pauseTaskTimer=function(id){oldPause(id);if(String(activeTimerTaskId)!==String(id)){return} };
+  setTimeout(()=>{
+    try{
+      if(activeTimerTaskId!=null && studyTimeData[String(activeTimerTaskId)]?.running)window.openFocusMode(activeTimerTaskId);
+    }catch(e){}
+  },250);
 })();
 </script>
 
